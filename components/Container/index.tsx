@@ -16,7 +16,7 @@ const styles = {
   },
 };
 
-const Container = ({ children }: { children: ReactNode }) => {
+export default function Container({ children }: { children: ReactNode }) {
   return (
     <div style={styles.root}>
       <MuiContainer sx={styles.container} maxWidth="lg">
@@ -24,6 +24,4 @@ const Container = ({ children }: { children: ReactNode }) => {
       </MuiContainer>
     </div>
   );
-};
-
-export default Container;
+}

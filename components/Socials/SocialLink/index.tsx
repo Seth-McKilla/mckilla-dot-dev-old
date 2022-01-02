@@ -7,13 +7,13 @@ import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 
-interface Props {
+type SocialLinkProps = {
   title: string;
   href: string;
   imgSrc: string;
-}
+};
 
-const SocialLink = (props: Props) => {
+export default function SocialLink(props: SocialLinkProps) {
   const { title, href, imgSrc } = props;
 
   const theme = useTheme();
@@ -40,6 +40,4 @@ const SocialLink = (props: Props) => {
       </a>
     </Grid>
   );
-};
-
-export default SocialLink;
+}

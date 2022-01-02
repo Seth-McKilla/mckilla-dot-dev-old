@@ -4,7 +4,7 @@ import _ from "lodash";
 // Mui
 import Typography from "@mui/material/Typography";
 
-const TypingAnimation = () => {
+export default function TypingAnimation() {
   const passions = [
     "all things javascript.",
     "React... NextJS in particular.",
@@ -36,6 +36,4 @@ const TypingAnimation = () => {
       />
     </Typography>
   );
-};
-
-export default TypingAnimation;
+}

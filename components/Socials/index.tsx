@@ -3,7 +3,7 @@ import SocialLink from "./SocialLink";
 // Mui
 import Grid from "@mui/material/Grid";
 
-const Socials = () => {
+export default function Socials() {
   return (
     <Grid container spacing={2}>
       <SocialLink
@@ -28,6 +28,4 @@ const Socials = () => {
       />
     </Grid>
   );
-};
-
-export default Socials;
+}
