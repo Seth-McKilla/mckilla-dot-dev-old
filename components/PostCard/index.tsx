@@ -42,7 +42,7 @@ export default function PostCard(props: PostCardProps) {
             sx={{ height: 200 }}
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography gutterBottom variant="h4" component="div">
               {title}
             </Typography>
             <Stack direction="row" spacing={1} mb={2}>

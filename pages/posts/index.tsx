@@ -22,7 +22,7 @@ const Posts: NextPage = () => {
 
     setSearch(search);
     setPosts(
-      posts.filter((post: PostCardProps) =>
+      postsList.filter((post: PostCardProps) =>
         post.title.toLowerCase().includes(search.toLowerCase())
       )
     );
