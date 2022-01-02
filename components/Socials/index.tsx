@@ -17,9 +17,9 @@ export default function Socials() {
         imgSrc="/socials/twitter.svg"
       />
       <SocialLink
-        title="GitCoin"
-        href="https://gitcoin.co/seth-mckilla"
-        imgSrc="/socials/gitcoin.svg"
+        title="CyberConnect"
+        href="https://app.cyberconnect.me/address/mckillas.eth"
+        imgSrc="/socials/cyberconnect.svg"
       />
       <SocialLink
         title="Email"
