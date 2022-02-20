@@ -24,11 +24,11 @@ export default function ButtonAppBar() {
               </a>
             </Link>
           </Box>
-          <Link href="/posts" passHref>
+          {/* <Link href="/posts" passHref>
             <Button color="inherit" size="large" variant="outlined">
               Blog
             </Button>
-          </Link>
+          </Link> */}
         </Toolbar>
       </AppBar>
     </Box>
