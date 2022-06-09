@@ -5,7 +5,7 @@ import Grid from "@mui/material/Grid";
 
 export default function Socials() {
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={2} justifyContent="center">
       <SocialLink
         title="GitHub"
         href="https://github.com/Seth-McKilla"
