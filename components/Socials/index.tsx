@@ -17,11 +17,6 @@ export default function Socials() {
         imgSrc="/socials/twitter.svg"
       />
       <SocialLink
-        title="CyberConnect"
-        href="https://app.cyberconnect.me/address/mckillas.eth"
-        imgSrc="/socials/cyberconnect.svg"
-      />
-      <SocialLink
         title="Email"
         href="mailto:seth@endevrs.dev"
         imgSrc="/socials/email.svg"
