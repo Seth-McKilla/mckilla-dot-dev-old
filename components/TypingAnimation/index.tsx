@@ -7,18 +7,16 @@ import Typography from "@mui/material/Typography";
 export default function TypingAnimation() {
   const passions = [
     "all things javascript.",
-    "React... NextJS in particular.",
-    "blockchain and cryptocurrency.",
+    "React and the NextJS framework in particular.",
     "the Legend of Zelda series.",
-    "Ethereum and Solidity.",
-    "hackathons... on GitCoin in particular.",
+    "Software as a Service.",
+    "the occassional hackathon.",
     "solving interesting problems with software.",
     "talking with / teaching others about software.",
-    "the web 3.0 movement.",
     "collaborating with people who also have a passion for software.",
     "entrepreneurial ventures within the tech space.",
     "consistently learning new things.",
-    "getting my hands dirty with exploring new technology.",
+    "getting my hands dirty by exploring new technology.",
     "meditation and self-betterment.",
   ];
 
