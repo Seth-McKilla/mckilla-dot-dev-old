@@ -1,6 +1,4 @@
 import { ReactNode } from "react";
-
-//Mui
 import { default as MuiContainer } from "@mui/material/Container";
 
 const styles = {

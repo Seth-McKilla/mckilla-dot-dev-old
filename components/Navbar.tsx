@@ -1,7 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-
-// Mui
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -24,11 +22,11 @@ export default function ButtonAppBar() {
               </a>
             </Link>
           </Box>
-          {/* <Link href="/posts" passHref>
+          <Link href="/posts" passHref>
             <Button color="inherit" size="large" variant="outlined">
               Blog
             </Button>
-          </Link> */}
+          </Link>
         </Toolbar>
       </AppBar>
     </Box>
