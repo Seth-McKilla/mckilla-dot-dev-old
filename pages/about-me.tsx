@@ -64,6 +64,7 @@ const AboutMe: NextPage = () => {
                   },
                 },
               }}
+              mb={5}
             >
               <Image
                 width={250}
@@ -73,9 +74,12 @@ const AboutMe: NextPage = () => {
               />
             </Box>
 
-            <Heading fontSize="5xl">{"Get to know me!"}</Heading>
+            <Heading fontSize={{ base: "xl", lg: "3xl" }}>
+              {"Get to know me!"}
+            </Heading>
 
             <Text>{"Some things I'm passionate about are..."}</Text>
+
             <Typewriter
               options={{
                 strings: shuffle(passions),
@@ -86,18 +90,22 @@ const AboutMe: NextPage = () => {
               }}
             />
 
-            <Text fontSize="4xl">{"Want to know more? Get in touch!"}</Text>
+            <Text fontSize="lg" mb={2}>
+              {"Want to know more? Let's connect!"}
+            </Text>
 
             <HStack spacing={6}>
               <SocialButton
                 label="Twitter"
                 href="https://twitter.com/sethmckilla"
+                size={16}
               >
                 <FaTwitter />
               </SocialButton>
               <SocialButton
                 label="GitHub"
                 href="https://github.com/seth-mckilla"
+                size={16}
               >
                 <FaGithub />
               </SocialButton>

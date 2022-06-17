@@ -5,15 +5,21 @@ interface Props {
   children: ReactNode;
   label: string;
   href: string;
+  size: number;
 }
 
-export default function SocialButton({ children, label, href }: Props) {
+export default function SocialButton({
+  children,
+  label,
+  href,
+  size = 8,
+}: Props) {
   return (
     <chakra.button
       bg={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
       rounded="full"
-      w={8}
-      h={8}
+      w={size}
+      h={size}
       cursor="pointer"
       as="a"
       href={href}
@@ -26,6 +32,7 @@ export default function SocialButton({ children, label, href }: Props) {
       _hover={{
         bg: useColorModeValue("blackAlpha.200", "whiteAlpha.200"),
       }}
+      fontSize={size * 2}
     >
       <VisuallyHidden>{label}</VisuallyHidden>
       {children}
