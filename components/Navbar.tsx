@@ -37,7 +37,13 @@ export default function NavBar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box bg={useColorModeValue("blue.600", "gray.900")} px={4}>
+    <Box
+      as="header"
+      position="fixed"
+      w="100%"
+      bg={useColorModeValue("blue.700", "gray.900")}
+      px={4}
+    >
       <Flex h={16} alignItems="center" justifyContent="space-between">
         <Box>
           <Link href="/" passHref>
