@@ -1,9 +1,9 @@
 import { useRouter } from "next/router";
 import type { NextPage } from "next";
 import ErrorPage from "next/error";
-import { getPostBySlug, getAllPosts } from "../../../lib/api";
-import mdToHtml from "../../../lib/mdToHtml";
 import { Container } from "components";
+import { getPostBySlug, getAllPosts, mdToHtml } from "lib";
+
 import type { Post } from "types";
 
 interface Props {
@@ -27,7 +27,6 @@ const Post: NextPage<Props> = (props) => {
 };
 
 export async function getStaticProps({ params }: { params: { slug: string } }) {
-  console.log(params);
   const post = getPostBySlug(params.slug, [
     "title",
     "series",

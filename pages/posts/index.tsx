@@ -1,11 +1,12 @@
 import Head from "next/head";
 import type { NextPage } from "next";
 import { useState } from "react";
-import { getAllPosts } from "../../lib/api";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
-import { Container, PostPreview } from "../../components";
+import { Container, PostPreview } from "components";
+import { getAllPosts } from "lib";
+
 import type { Post } from "types";
 
 interface Props {

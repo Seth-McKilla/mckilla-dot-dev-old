@@ -1,7 +1,5 @@
 import Image from "next/image";
 import _ from "lodash";
-
-// Mui
 import { useTheme } from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";

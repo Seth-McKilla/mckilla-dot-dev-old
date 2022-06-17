@@ -1,8 +1,8 @@
 import type { AppProps } from "next/app";
 import { useEffect } from "react";
-import { Navbar } from "../components";
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import theme from "../theme";
+import { Navbar } from "components";
 
 const App = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {

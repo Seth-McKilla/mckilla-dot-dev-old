@@ -7,7 +7,8 @@ import Typography from "@mui/material/Typography";
 import CardActionArea from "@mui/material/CardActionArea";
 import Stack from "@mui/material/Stack";
 import Chip from "@mui/material/Chip";
-import { Post } from "types";
+
+import type { Post } from "types";
 
 export default function PostPreview(props: Post) {
   const { title, series, tags, excerpt, image, date, slug } = props;

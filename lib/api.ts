@@ -3,8 +3,7 @@ import { join } from "path";
 import matter from "gray-matter";
 import _ from "lodash";
 
-// Types
-import { PostCardProps } from "../components";
+import type { Post } from "types";
 
 const postsDirectory = join(process.cwd(), "_posts");
 
@@ -40,5 +39,5 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
 export function getAllPosts(fields: string[] = []) {
   const slugs = getPostSlugs();
   const posts = slugs.map((slug: string) => getPostBySlug(slug, fields));
-  return _.sortBy(posts, (post: PostCardProps) => post.date).reverse();
+  return _.sortBy(posts, (post: Post) => post.date).reverse();
 }
