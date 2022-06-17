@@ -1,7 +1,7 @@
 import Head from "next/head";
 import type { NextPage } from "next";
 import { useState } from "react";
-import { Container, PostPreview } from "components";
+import { PostPreview } from "components";
 import { getAllPosts } from "lib";
 
 import type { Post } from "types";

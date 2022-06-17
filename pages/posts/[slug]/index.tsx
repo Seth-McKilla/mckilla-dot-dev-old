@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import type { NextPage } from "next";
 import ErrorPage from "next/error";
-import { Container } from "components";
 import { getPostBySlug, getAllPosts, mdToHtml } from "lib";
 
 import type { Post } from "types";
