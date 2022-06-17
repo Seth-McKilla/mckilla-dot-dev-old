@@ -5,10 +5,10 @@ interface Props {
   children: ReactNode;
   label: string;
   href: string;
-  size: number;
+  size?: number;
 }
 
-export default function SocialButton({
+export default function LinkMenuItem({
   children,
   label,
   href,

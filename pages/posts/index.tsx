@@ -1,7 +1,7 @@
 import Head from "next/head";
 import type { NextPage } from "next";
 import { useState } from "react";
-import { PostPreview } from "components";
+import { CardPost } from "components";
 import { getAllPosts } from "lib";
 
 import type { Post } from "types";
@@ -62,7 +62,7 @@ const Posts: NextPage<Props> = (props) => {
     //     <Grid container item xs={12}>
     //       {posts?.map((post: Post) => (
     //         <Grid key={post.slug} item xs={12} sm={6} md={4}>
-    //           <PostPreview {...post} />
+    //           <CardPost {...post} />
     //         </Grid>
     //       ))}
     //     </Grid>

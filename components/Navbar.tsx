@@ -20,7 +20,7 @@ import {
 } from "@chakra-ui/react";
 import { FaSun, FaMoon, FaHeart } from "react-icons/fa";
 import { MdMenu } from "react-icons/md";
-import { MenuLink } from "components";
+import { LinkMenuItem } from "components";
 
 const menuItems = [
   {
@@ -81,7 +81,11 @@ export default function NavBar() {
               <DrawerBody>
                 <VStack spacing={4} mt={4}>
                   {menuItems.map((item) => (
-                    <MenuLink key={item.label} onClose={onClose} {...item} />
+                    <LinkMenuItem
+                      key={item.label}
+                      onClose={onClose}
+                      {...item}
+                    />
                   ))}
                 </VStack>
               </DrawerBody>

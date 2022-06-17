@@ -7,7 +7,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { FaGithub, FaTwitter } from "react-icons/fa";
-import { SocialButton } from "components";
+import { LinkIcon } from "components";
 
 export default function Footer() {
   return (
@@ -47,15 +47,12 @@ export default function Footer() {
             © {new Date().getFullYear()} ENDEVRS, LLC. All rights reserved
           </Text>
           <Stack direction="row" spacing={6}>
-            <SocialButton
-              label="Twitter"
-              href="https://twitter.com/sethmckilla"
-            >
+            <LinkIcon label="Twitter" href="https://twitter.com/sethmckilla">
               <FaTwitter />
-            </SocialButton>
-            <SocialButton label="GitHub" href="https://github.com/seth-mckilla">
+            </LinkIcon>
+            <LinkIcon label="GitHub" href="https://github.com/seth-mckilla">
               <FaGithub />
-            </SocialButton>
+            </LinkIcon>
           </Stack>
         </Container>
       </Box>

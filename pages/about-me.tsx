@@ -11,7 +11,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { FaGithub, FaTwitter } from "react-icons/fa";
-import { Layout, SocialButton } from "components";
+import { Layout, LinkIcon } from "components";
 import { shuffle } from "utils";
 import headShot from "../public/seth-headshot.png";
 
@@ -95,20 +95,20 @@ const AboutMe: NextPage = () => {
             </Text>
 
             <HStack spacing={6}>
-              <SocialButton
+              <LinkIcon
                 label="Twitter"
                 href="https://twitter.com/sethmckilla"
                 size={16}
               >
                 <FaTwitter />
-              </SocialButton>
-              <SocialButton
+              </LinkIcon>
+              <LinkIcon
                 label="GitHub"
                 href="https://github.com/seth-mckilla"
                 size={16}
               >
                 <FaGithub />
-              </SocialButton>
+              </LinkIcon>
             </HStack>
           </VStack>
         </Container>
