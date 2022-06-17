@@ -1,4 +1,4 @@
-import floatingHead from "../../public/seth-headshot.png";
+import floatingHead from "../public/seth-headshot.png";
 
 // Next
 import Image from "next/image";
