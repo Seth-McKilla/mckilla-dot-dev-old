@@ -37,7 +37,7 @@ export default function Home() {
             {"I'm Seth, a full-stack web developer."}
             <br />
             {
-              "Thanks for stopping by to check out my endeavors in software development."
+              "Thanks for stopping by to check out my endeavors in software development!"
             }
           </Text>
         </Container>

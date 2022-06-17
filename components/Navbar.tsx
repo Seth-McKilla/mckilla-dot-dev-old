@@ -48,6 +48,7 @@ export default function NavBar() {
       w="100%"
       bg={useColorModeValue("blue.700", "gray.900")}
       px={4}
+      zIndex={10}
     >
       <Flex h={16} alignItems="center" justifyContent="space-between">
         <Box>

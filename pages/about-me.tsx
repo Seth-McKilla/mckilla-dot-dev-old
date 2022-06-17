@@ -34,14 +34,23 @@ const AboutMe: NextPage = () => {
   return (
     <Layout
       title="ENDEVRS | About me"
-      description="Get to know what I'm all about."
+      description="Get to know more about Seth."
     >
-      <Flex p={8} flex={1} align="center" justify="center" direction="column">
+      <Flex
+        p={8}
+        mt={{
+          base: 20,
+          md: 0,
+        }}
+        flex={1}
+        align="center"
+        justify="center"
+        direction="column"
+      >
         <Container maxW="container.lg">
           <VStack>
             <Box
               sx={{
-                zIndex: 10,
                 height: "250px",
                 width: "250px",
                 border: `5px solid blue.700`,
@@ -74,7 +83,7 @@ const AboutMe: NextPage = () => {
               />
             </Box>
 
-            <Heading fontSize={{ base: "xl", lg: "3xl" }}>
+            <Heading fontSize={{ base: "xl", lg: "3xl" }} pb={4}>
               {"Get to know me!"}
             </Heading>
 
