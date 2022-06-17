@@ -1,25 +1,13 @@
-import type { AppProps } from "next/app";
-import { useEffect } from "react";
-import { ThemeProvider, CssBaseline } from "@mui/material";
-import theme from "../theme";
+import { ChakraProvider } from "@chakra-ui/react";
 import { Navbar } from "components";
 
-const App = ({ Component, pageProps }: AppProps) => {
-  useEffect(() => {
-    // Remove the server-side injected CSS.
-    const jssStyles = document.querySelector("#jss-server-side");
-    if (jssStyles) {
-      jssStyles.parentElement!.removeChild(jssStyles);
-    }
-  }, []);
+import type { AppProps } from "next/app";
 
+export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
+    <ChakraProvider>
       <Navbar />
       <Component {...pageProps} />
-    </ThemeProvider>
+    </ChakraProvider>
   );
-};
-
-export default App;
+}

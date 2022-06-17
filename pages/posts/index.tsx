@@ -1,9 +1,6 @@
 import Head from "next/head";
 import type { NextPage } from "next";
 import { useState } from "react";
-import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
-import TextField from "@mui/material/TextField";
 import { Container, PostPreview } from "components";
 import { getAllPosts } from "lib";
 
@@ -31,45 +28,46 @@ const Posts: NextPage<Props> = (props) => {
   };
 
   return (
-    <Container>
-      <Head>
-        <title>ENDEVRS | Posts</title>
-        <meta name="description" content="ENDEVRS - Posts" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <div>Posts</div>
+    // <Container>
+    //   <Head>
+    //     <title>ENDEVRS | Posts</title>
+    //     <meta name="description" content="ENDEVRS - Posts" />
+    //     <link rel="icon" href="/favicon.ico" />
+    //   </Head>
 
-      <Grid container spacing={3} direction="column" alignItems="center">
-        <Grid item xs={12}>
-          <Typography variant="h2" align="center">
-            Posts
-          </Typography>
-        </Grid>
+    //   <Grid container spacing={3} direction="column" alignItems="center">
+    //     <Grid item xs={12}>
+    //       <Typography variant="h2" align="center">
+    //         Posts
+    //       </Typography>
+    //     </Grid>
 
-        <Grid item xs={12} mb={5}>
-          <TextField
-            label="Search Posts"
-            placeholder="Search by title, tag, etc."
-            sx={{
-              minWidth: "300px",
-              textAlign: "center",
-              [`& fieldset`]: {
-                borderRadius: 5,
-              },
-            }}
-            value={search}
-            onChange={handleChange}
-          />
-        </Grid>
+    //     <Grid item xs={12} mb={5}>
+    //       <TextField
+    //         label="Search Posts"
+    //         placeholder="Search by title, tag, etc."
+    //         sx={{
+    //           minWidth: "300px",
+    //           textAlign: "center",
+    //           [`& fieldset`]: {
+    //             borderRadius: 5,
+    //           },
+    //         }}
+    //         value={search}
+    //         onChange={handleChange}
+    //       />
+    //     </Grid>
 
-        <Grid container item xs={12}>
-          {posts?.map((post: Post) => (
-            <Grid key={post.slug} item xs={12} sm={6} md={4}>
-              <PostPreview {...post} />
-            </Grid>
-          ))}
-        </Grid>
-      </Grid>
-    </Container>
+    //     <Grid container item xs={12}>
+    //       {posts?.map((post: Post) => (
+    //         <Grid key={post.slug} item xs={12} sm={6} md={4}>
+    //           <PostPreview {...post} />
+    //         </Grid>
+    //       ))}
+    //     </Grid>
+    //   </Grid>
+    // </Container>
   );
 };
 

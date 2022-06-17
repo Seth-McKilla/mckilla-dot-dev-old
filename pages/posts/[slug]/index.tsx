@@ -20,9 +20,10 @@ const Post: NextPage<Props> = (props) => {
   }
 
   return (
-    <Container>
-      <h1>{slug}</h1>
-    </Container>
+    <div>Post</div>
+    // <Container>
+    //   <h1>{slug}</h1>
+    // </Container>
   );
 };
 
