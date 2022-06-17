@@ -2,25 +2,20 @@ import Head from "next/head";
 import type { NextPage } from "next";
 import { useState } from "react";
 import { getAllPosts } from "../../lib/api";
-
-// Mui
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
+import { Container, PostPreview } from "../../components";
+import type { Post } from "types";
 
-// Components
-import { Container, PostCard } from "../../components";
-// Types
-import type { PostCardProps } from "../../components";
+interface Props {
+  allPosts: Post[];
+}
 
-type Props = {
-  allPosts: PostCardProps[];
-};
-
-const Posts: NextPage<Props> = (props: Props) => {
+const Posts: NextPage<Props> = (props) => {
   const { allPosts } = props;
 
-  const [posts, setPosts] = useState<PostCardProps[]>(allPosts);
+  const [posts, setPosts] = useState<Post[]>(allPosts);
   const [search, setSearch] = useState<string>("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,7 +23,7 @@ const Posts: NextPage<Props> = (props: Props) => {
 
     setSearch(search);
     setPosts(
-      allPosts.filter((post: PostCardProps) =>
+      allPosts.filter((post: Post) =>
         post.title.toLowerCase().includes(search.toLowerCase())
       )
     );
@@ -66,9 +61,9 @@ const Posts: NextPage<Props> = (props: Props) => {
         </Grid>
 
         <Grid container item xs={12}>
-          {posts?.map((post: PostCardProps) => (
+          {posts?.map((post: Post) => (
             <Grid key={post.slug} item xs={12} sm={6} md={4}>
-              <PostCard {...post} />
+              <PostPreview {...post} />
             </Grid>
           ))}
         </Grid>

@@ -3,18 +3,14 @@ import type { NextPage } from "next";
 import ErrorPage from "next/error";
 import { getPostBySlug, getAllPosts } from "../../../lib/api";
 import mdToHtml from "../../../lib/mdToHtml";
+import { Container } from "components";
+import type { Post } from "types";
 
-// Components
-import { Container } from "../../../components";
+interface Props {
+  post: Post;
+}
 
-// Types
-import type { PostCardProps } from "../../../components";
-
-type Props = {
-  post: PostCardProps;
-};
-
-const Post: NextPage<Props> = (props: Props) => {
+const Post: NextPage<Props> = (props) => {
   const { post } = props;
   const router = useRouter();
   const { slug } = router.query;

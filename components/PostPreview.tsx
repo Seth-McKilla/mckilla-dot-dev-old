@@ -1,7 +1,5 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
-
-// Mui
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -9,18 +7,9 @@ import Typography from "@mui/material/Typography";
 import CardActionArea from "@mui/material/CardActionArea";
 import Stack from "@mui/material/Stack";
 import Chip from "@mui/material/Chip";
+import { Post } from "types";
 
-export type PostCardProps = {
-  title: string;
-  series: string;
-  tags: string;
-  excerpt: string;
-  image: string;
-  date: string;
-  slug: string;
-};
-
-export default function PostCard(props: PostCardProps) {
+export default function PostPreview(props: Post) {
   const { title, series, tags, excerpt, image, date, slug } = props;
 
   return (
