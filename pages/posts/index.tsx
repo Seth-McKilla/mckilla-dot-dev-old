@@ -10,9 +10,7 @@ interface Props {
   allPosts: Post[];
 }
 
-const Posts: NextPage<Props> = (props) => {
-  const { allPosts } = props;
-
+const Posts: NextPage<Props> = ({ allPosts }) => {
   const [posts, setPosts] = useState<Post[]>(allPosts);
   const [search, setSearch] = useState<string>("");
 

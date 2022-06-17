@@ -11,8 +11,10 @@ interface Props {
 export default function LinkIcon({ children, label, href, size = 8 }: Props) {
   return (
     <chakra.button
-      bg={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
       rounded="full"
+      _hover={{
+        bg: useColorModeValue("blue.100", "blue.100"),
+      }}
       w={size}
       h={size}
       cursor="pointer"
@@ -24,9 +26,6 @@ export default function LinkIcon({ children, label, href, size = 8 }: Props) {
       alignItems="center"
       justifyContent="center"
       transition="background 0.3s ease"
-      _hover={{
-        bg: useColorModeValue("blackAlpha.200", "whiteAlpha.200"),
-      }}
       fontSize={size * 2.5}
     >
       <VisuallyHidden>{label}</VisuallyHidden>

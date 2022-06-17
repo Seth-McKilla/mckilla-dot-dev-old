@@ -1,5 +1,4 @@
 import Image from "next/image";
-import type { NextPage } from "next";
 import Typewriter from "typewriter-effect";
 import {
   Flex,
@@ -11,9 +10,17 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { FaGithub, FaTwitter } from "react-icons/fa";
+import {
+  SiTypescript,
+  SiNextdotjs,
+  SiChakraui,
+  SiVercel,
+} from "react-icons/si";
 import { Layout, LinkIcon } from "components";
 import { shuffle } from "utils";
 import headShot from "../public/seth-headshot.png";
+
+import type { NextPage } from "next";
 
 const passions = [
   "all things javascript.",
@@ -38,10 +45,7 @@ const AboutMe: NextPage = () => {
     >
       <Flex
         p={8}
-        mt={{
-          base: 20,
-          md: 0,
-        }}
+        mt={20}
         flex={1}
         align="center"
         justify="center"
@@ -53,7 +57,6 @@ const AboutMe: NextPage = () => {
               sx={{
                 height: "250px",
                 width: "250px",
-                border: `5px solid blue.700`,
                 backgroundColor: "blue.700",
                 borderRadius: "50%",
                 boxShadow: "0 10px 15px 0px rgba(0, 0, 0, 0.8)",
@@ -86,9 +89,7 @@ const AboutMe: NextPage = () => {
             <Heading fontSize={{ base: "xl", lg: "3xl" }} pb={4}>
               {"Get to know me!"}
             </Heading>
-
             <Text>{"Some things I'm passionate about are..."}</Text>
-
             <Typewriter
               options={{
                 strings: shuffle(passions),
@@ -99,10 +100,38 @@ const AboutMe: NextPage = () => {
               }}
             />
 
-            <Text fontSize="lg" pt={5}>
-              {"Want to know more? Let's connect!"}
-            </Text>
+            <Heading fontSize={{ base: "xl", lg: "3xl" }} pt={4} pb={4}>
+              {"Preferred Stack"}
+            </Heading>
+            <HStack spacing={6}>
+              <LinkIcon
+                label="Typescript"
+                href="https://typescript.org/"
+                size={14}
+              >
+                <SiTypescript />
+              </LinkIcon>
+              <LinkIcon label="NextJS" href="https://nextjs.org/" size={14}>
+                <SiNextdotjs />
+              </LinkIcon>
+              <LinkIcon
+                label="Chakra UI"
+                href="https://chakra-ui.com/"
+                size={14}
+              >
+                <SiChakraui />
+              </LinkIcon>
+              <LinkIcon label="Vercel" href="https://vercel.com/" size={14}>
+                <SiVercel />
+              </LinkIcon>
+            </HStack>
 
+            <Heading fontSize={{ base: "xl", lg: "2xl" }} pt={5}>
+              {"Want to know more?"}
+            </Heading>
+            <Heading fontSize={{ base: "xl", lg: "2xl" }}>
+              {"Let's connect!"}
+            </Heading>
             <HStack spacing={6} pt={5}>
               <LinkIcon
                 label="Twitter"
