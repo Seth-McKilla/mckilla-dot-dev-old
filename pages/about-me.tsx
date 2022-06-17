@@ -90,22 +90,22 @@ const AboutMe: NextPage = () => {
               }}
             />
 
-            <Text fontSize="lg" mb={2}>
+            <Text fontSize="lg" pt={5}>
               {"Want to know more? Let's connect!"}
             </Text>
 
-            <HStack spacing={6}>
+            <HStack spacing={6} pt={5}>
               <LinkIcon
                 label="Twitter"
                 href="https://twitter.com/sethmckilla"
-                size={16}
+                size={14}
               >
                 <FaTwitter />
               </LinkIcon>
               <LinkIcon
                 label="GitHub"
                 href="https://github.com/seth-mckilla"
-                size={16}
+                size={14}
               >
                 <FaGithub />
               </LinkIcon>

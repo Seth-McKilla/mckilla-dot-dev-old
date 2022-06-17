@@ -8,12 +8,7 @@ interface Props {
   size?: number;
 }
 
-export default function LinkMenuItem({
-  children,
-  label,
-  href,
-  size = 8,
-}: Props) {
+export default function LinkIcon({ children, label, href, size = 8 }: Props) {
   return (
     <chakra.button
       bg={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
@@ -32,7 +27,7 @@ export default function LinkMenuItem({
       _hover={{
         bg: useColorModeValue("blackAlpha.200", "whiteAlpha.200"),
       }}
-      fontSize={size * 2}
+      fontSize={size * 2.5}
     >
       <VisuallyHidden>{label}</VisuallyHidden>
       {children}

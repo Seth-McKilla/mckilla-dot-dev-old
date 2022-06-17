@@ -7,7 +7,7 @@ interface Props {
   href: string;
 }
 
-export default function MenuLink({ onClose, label, href }: Props) {
+export default function LinkText({ onClose, label, href }: Props) {
   return (
     <Link href={href}>
       <a>

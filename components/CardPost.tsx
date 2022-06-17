@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 import type { Post } from "types";
 
-export default function PostPreview(props: Post) {
+export default function CardPost(props: Post) {
   const { title, series, tags, excerpt, image, date, slug } = props;
 
   return (
