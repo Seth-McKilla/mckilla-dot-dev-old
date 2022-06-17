@@ -16,6 +16,7 @@ import {
   useColorMode,
   IconButton,
   HStack,
+  VStack,
 } from "@chakra-ui/react";
 import { FaSun, FaMoon, FaHeart } from "react-icons/fa";
 import { MdMenu } from "react-icons/md";
@@ -25,6 +26,10 @@ const menuItems = [
   {
     label: "Home",
     href: "/",
+  },
+  {
+    label: "About me",
+    href: "/about-me",
   },
   {
     label: "Posts",
@@ -74,9 +79,11 @@ export default function NavBar() {
               <DrawerHeader borderBottomWidth="1px">Menu</DrawerHeader>
 
               <DrawerBody>
-                {menuItems.map((item) => (
-                  <MenuLink key={item.label} onClose={onClose} {...item} />
-                ))}
+                <VStack spacing={4} mt={4}>
+                  {menuItems.map((item) => (
+                    <MenuLink key={item.label} onClose={onClose} {...item} />
+                  ))}
+                </VStack>
               </DrawerBody>
 
               <DrawerFooter>

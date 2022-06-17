@@ -23,7 +23,7 @@ export default function Footer() {
         justify="center"
         align="center"
       >
-        <Stack direction={"row"} spacing={6}>
+        <Stack direction={"row"} spacing={6} p={2}>
           <Link href="/">Home</Link>
           <Link href="mailto:seth@endevrs.dev">Contact</Link>
         </Stack>
