@@ -15,8 +15,10 @@ import {
   useColorModeValue,
   useColorMode,
   IconButton,
+  HStack,
+  Center,
 } from "@chakra-ui/react";
-import { FaSun, FaMoon } from "react-icons/fa";
+import { FaSun, FaMoon, FaHeart } from "react-icons/fa";
 import { MdMenu } from "react-icons/md";
 import { MenuLink } from "components";
 
@@ -34,56 +36,66 @@ const menuItems = [
 export default function NavBar() {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
-    <>
-      <Box bg={useColorModeValue("blue.500", "gray.900")} px={4}>
-        <Flex h={16} alignItems="center" justifyContent="space-between">
-          <Box>
-            <Link href="/" passHref>
-              <a>
-                <Image
-                  src="/logo_white.png"
-                  alt="endevrs-logo"
-                  height={60}
-                  width={233}
-                />
-              </a>
-            </Link>
-          </Box>
+    <Box bg={useColorModeValue("blue.500", "gray.900")} px={4}>
+      <Flex h={16} alignItems="center" justifyContent="space-between">
+        <Box>
+          <Link href="/" passHref>
+            <a>
+              <Image
+                src="/logo_white.png"
+                alt="endevrs-logo"
+                height={60}
+                width={233}
+              />
+            </a>
+          </Link>
+        </Box>
 
-          <Flex alignItems="center">
-            <IconButton
-              icon={<MdMenu />}
-              aria-label="menu icon"
-              variant="link"
-              fontSize="40px"
-              color="white"
-              onClick={onOpen}
-            />
-            <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
-              <DrawerOverlay />
-              <DrawerContent>
-                <DrawerCloseButton />
-                <DrawerHeader borderBottomWidth="1px">
-                  Basic Drawer
-                </DrawerHeader>
+        <Flex alignItems="center">
+          <IconButton
+            icon={<MdMenu />}
+            aria-label="menu icon"
+            variant="link"
+            fontSize="40px"
+            color="white"
+            onClick={onOpen}
+          />
+          <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
+            <DrawerOverlay />
+            <DrawerContent>
+              <DrawerCloseButton />
+              <DrawerHeader borderBottomWidth="1px">Menu</DrawerHeader>
 
-                <DrawerBody>
-                  {menuItems.map((item) => (
-                    <MenuLink key={item.label} onClose={onClose} {...item} />
-                  ))}
-                </DrawerBody>
+              <DrawerBody>
+                {menuItems.map((item) => (
+                  <MenuLink key={item.label} onClose={onClose} {...item} />
+                ))}
+              </DrawerBody>
 
-                <DrawerFooter>
+              <DrawerFooter>
+                <HStack w="full" justify="center" spacing="24px">
+                  <Link
+                    href="https://github.com/sponsors/Seth-McKilla"
+                    passHref
+                  >
+                    <a target="_blank" rel="noopener noreferrer">
+                      <Button leftIcon={<FaHeart />} aria-label="heart">
+                        Sponsor
+                      </Button>
+                    </a>
+                  </Link>
+
                   <Button onClick={toggleColorMode}>
                     {colorMode === "light" ? <FaMoon /> : <FaSun />}
                   </Button>
-                </DrawerFooter>
-              </DrawerContent>
-            </Drawer>
-          </Flex>
+                </HStack>
+              </DrawerFooter>
+            </DrawerContent>
+          </Drawer>
         </Flex>
-      </Box>
-    </>
+      </Flex>
+    </Box>
   );
 }
