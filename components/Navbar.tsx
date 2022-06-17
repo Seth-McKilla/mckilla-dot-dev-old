@@ -16,7 +16,6 @@ import {
   useColorMode,
   IconButton,
   HStack,
-  Center,
 } from "@chakra-ui/react";
 import { FaSun, FaMoon, FaHeart } from "react-icons/fa";
 import { MdMenu } from "react-icons/md";
@@ -38,7 +37,7 @@ export default function NavBar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box bg={useColorModeValue("blue.500", "gray.900")} px={4}>
+    <Box bg={useColorModeValue("blue.600", "gray.900")} px={4}>
       <Flex h={16} alignItems="center" justifyContent="space-between">
         <Box>
           <Link href="/" passHref>
