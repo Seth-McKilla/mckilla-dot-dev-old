@@ -1,4 +1,4 @@
-import { chakra, useColorModeValue, VisuallyHidden } from "@chakra-ui/react";
+import { chakra, useColorMode, VisuallyHidden } from "@chakra-ui/react";
 import type { ReactNode } from "react";
 
 interface Props {
@@ -6,7 +6,7 @@ interface Props {
   label: string;
   href: string;
   size?: number;
-  color?: string;
+  color?: string | null;
   hoverColor?: string;
 }
 
@@ -15,16 +15,19 @@ export default function LinkIcon({
   label,
   href,
   size = 8,
-  color = "gray.800",
-  hoverColor = "black",
+  color = null,
+  hoverColor,
 }: Props) {
+  const { colorMode } = useColorMode();
+  const darkMode = colorMode === "dark";
+
   return (
     <chakra.button
       rounded="full"
       w={size}
       h={size}
       fontSize={size * 3}
-      color={color}
+      color={color || darkMode ? "gray.200" : "gray.800"}
       _hover={{
         color: hoverColor,
       }}
