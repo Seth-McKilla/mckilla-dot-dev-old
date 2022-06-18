@@ -31,10 +31,10 @@ const menuItems = [
     label: "About me",
     href: "/about-me",
   },
-  // {
-  //   label: "Posts",
-  //   href: "/posts",
-  // },
+  {
+    label: "Posts",
+    href: "/posts",
+  },
 ];
 
 export default function NavBar() {

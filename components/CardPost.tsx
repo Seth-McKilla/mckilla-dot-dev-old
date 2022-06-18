@@ -1,57 +1,76 @@
-import Link from "next/link";
-import { motion } from "framer-motion";
+import Image from "next/image";
+import {
+  Box,
+  Center,
+  Heading,
+  Text,
+  Stack,
+  HStack,
+  Tag,
+  useColorModeValue,
+} from "@chakra-ui/react";
 
 import type { Post } from "types";
 
-export default function CardPost(props: Post) {
-  const { title, series, tags, excerpt, image, date, slug } = props;
-
+export default function CarPost({
+  title,
+  series,
+  tags,
+  excerpt,
+  image,
+  date,
+  slug,
+}: Post) {
   return (
-    <div>Post Preview</div>
-    // <Card
-    //   component={motion.div}
-    //   whileHover={{
-    //     scale: 1.05,
-    //     transition: { duration: 0.1 },
-    //   }}
-    //   whileTap={{ scale: 0.95 }}
-    //   elevation={10}
-    // >
-    //   {/* <Link href={`/posts/${slug}`} passHref> */}
-    //   <CardActionArea>
-    //     <CardMedia
-    //       component="img"
-    //       height="140"
-    //       image={image}
-    //       alt={title}
-    //       sx={{ height: 200 }}
-    //     />
-    //     <CardContent>
-    //       <Typography gutterBottom variant="h5" component="div">
-    //         {title}
-    //       </Typography>
-    //       <Typography
-    //         gutterBottom
-    //         variant="h6"
-    //         component="div"
-    //         color="text.secondary"
-    //       >
-    //         {series}
-    //       </Typography>
-    //       <Typography variant="body2" color="text.secondary" gutterBottom>
-    //         {new Date(date).toLocaleDateString()}
-    //       </Typography>
-    //       <Typography variant="body1" gutterBottom>
-    //         {excerpt}
-    //       </Typography>
-    //       <Stack direction="row" spacing={1} mb={2}>
-    //         {tags?.split(",").map((tag, idx) => (
-    //           <Chip key={`${idx}-${tag}`} label={tag} variant="outlined" />
-    //         ))}
-    //       </Stack>
-    //     </CardContent>
-    //   </CardActionArea>
-    //   {/* </Link> */}
-    // </Card>
+    <Center py={6}>
+      <Box
+        maxW="sm"
+        w="full"
+        bg={useColorModeValue("white", "gray.900")}
+        boxShadow="2xl"
+        rounded="md"
+        p={6}
+        overflow="hidden"
+      >
+        <Box h="210px" bg="gray.100" mt={-6} mx={-6} mb={6} pos="relative">
+          <Image src={image} layout="fill" alt="preview image" />
+        </Box>
+        <Stack>
+          <Text
+            color="green.500"
+            textTransform="uppercase"
+            fontWeight={800}
+            fontSize="sm"
+            letterSpacing={1.1}
+          >
+            {series}
+          </Text>
+          <Heading
+            color={useColorModeValue("gray.700", "white")}
+            fontSize="2xl"
+            fontFamily="body"
+          >
+            {title}
+          </Heading>
+          <Text color="gray.500">{excerpt}</Text>
+        </Stack>
+        <Text color={"gray.500"} mb={4}>
+          {new Date(date).toLocaleDateString()}
+        </Text>
+        <HStack spacing={4}>
+          {tags.split(",").map((tag, idx) => (
+            <Tag
+              key={`${idx}-${tag}`}
+              p={1}
+              size="sm"
+              variant="solid"
+              colorScheme="blue"
+            >
+              {tag}
+            </Tag>
+          ))}
+        </HStack>
+      </Box>
+    </Center>
   );
 }

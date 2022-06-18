@@ -1,9 +1,16 @@
-import Head from "next/head";
-import type { NextPage } from "next";
 import { useState } from "react";
-import { CardPost } from "components";
+import {
+  Box,
+  Flex,
+  Container,
+  SimpleGrid,
+  Heading,
+  Input,
+} from "@chakra-ui/react";
+import { Layout, CardPost } from "components";
 import { getAllPosts } from "lib";
 
+import type { NextPage } from "next";
 import type { Post } from "types";
 
 interface Props {
@@ -26,46 +33,33 @@ const Posts: NextPage<Props> = ({ allPosts }) => {
   };
 
   return (
-    <div>Posts</div>
-    // <Container>
-    //   <Head>
-    //     <title>ENDEVRS | Posts</title>
-    //     <meta name="description" content="ENDEVRS - Posts" />
-    //     <link rel="icon" href="/favicon.ico" />
-    //   </Head>
+    <Layout
+      title="ENDEVRS | Posts"
+      description="Posts created by Seth on various web development topics."
+    >
+      <Flex p={8} mt={20} flex={1} align="center" direction="column">
+        <Container maxW="container.lg">
+          <Heading fontSize={{ base: "3xl", lg: "5xl" }} mb={5}>
+            Posts
+          </Heading>
 
-    //   <Grid container spacing={3} direction="column" alignItems="center">
-    //     <Grid item xs={12}>
-    //       <Typography variant="h2" align="center">
-    //         Posts
-    //       </Typography>
-    //     </Grid>
+          <Input
+            placeholder="Search posts by title, tag, etc."
+            value={search}
+            onChange={handleChange}
+            mb={5}
+          />
 
-    //     <Grid item xs={12} mb={5}>
-    //       <TextField
-    //         label="Search Posts"
-    //         placeholder="Search by title, tag, etc."
-    //         sx={{
-    //           minWidth: "300px",
-    //           textAlign: "center",
-    //           [`& fieldset`]: {
-    //             borderRadius: 5,
-    //           },
-    //         }}
-    //         value={search}
-    //         onChange={handleChange}
-    //       />
-    //     </Grid>
-
-    //     <Grid container item xs={12}>
-    //       {posts?.map((post: Post) => (
-    //         <Grid key={post.slug} item xs={12} sm={6} md={4}>
-    //           <CardPost {...post} />
-    //         </Grid>
-    //       ))}
-    //     </Grid>
-    //   </Grid>
-    // </Container>
+          <SimpleGrid minChildWidth="120px" spacing="40px">
+            {posts?.map((post: Post, idx) => (
+              <Box key={`${idx}-${post.slug}`}>
+                <CardPost {...post} />
+              </Box>
+            ))}
+          </SimpleGrid>
+        </Container>
+      </Flex>
+    </Layout>
   );
 };
 

@@ -1,8 +1,9 @@
-import { useRouter } from "next/router";
-import type { NextPage } from "next";
 import ErrorPage from "next/error";
+import { useRouter } from "next/router";
+import { Container } from "@chakra-ui/react";
 import { getPostBySlug, getAllPosts, mdToHtml } from "lib";
 
+import type { NextPage } from "next";
 import type { Post } from "types";
 
 interface Props {
@@ -19,10 +20,9 @@ const Post: NextPage<Props> = (props) => {
   }
 
   return (
-    <div>Post</div>
-    // <Container>
-    //   <h1>{slug}</h1>
-    // </Container>
+    <Container>
+      <h1>{slug}</h1>
+    </Container>
   );
 };
 
