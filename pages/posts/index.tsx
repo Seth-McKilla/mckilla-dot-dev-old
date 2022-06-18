@@ -1,4 +1,5 @@
-import { Box, Flex, Container, Heading, HStack } from "@chakra-ui/react";
+import { Fragment } from "react";
+import { Flex, Container, Heading, HStack } from "@chakra-ui/react";
 import { Layout, CardPost } from "components";
 import { getAllPosts } from "lib";
 
@@ -13,9 +14,9 @@ const Posts: NextPage<Props> = ({ posts }) => {
   return (
     <Layout
       title="ENDEVRS | Posts"
-      description="Posts created by Seth on various web development topics."
+      description="A list of articles on various web development topics including SaaS, NextJS, and Typescript."
     >
-      <Flex p={8} mt={20} flex={1} direction="column">
+      <Flex mt={20} flex={1} direction="column">
         <Container maxW="container.lg">
           <Heading fontSize={{ base: "3xl", lg: "5xl" }} mb={5}>
             Posts
@@ -23,9 +24,9 @@ const Posts: NextPage<Props> = ({ posts }) => {
 
           <HStack>
             {posts?.map((post: Post, idx) => (
-              <Box key={`${idx}-${post.slug}`}>
+              <Fragment key={`${idx}-${post.slug}`}>
                 <CardPost {...post} />
-              </Box>
+              </Fragment>
             ))}
           </HStack>
         </Container>
@@ -44,6 +45,7 @@ export async function getStaticProps() {
     "excerpt",
     "image",
     "date",
+    "readTime",
     "slug",
   ]);
 

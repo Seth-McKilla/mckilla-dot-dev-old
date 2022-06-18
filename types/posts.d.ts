@@ -5,5 +5,6 @@ export type Post = {
   excerpt: string;
   image: string;
   date: string;
+  readTime: number;
   slug: string;
 };
