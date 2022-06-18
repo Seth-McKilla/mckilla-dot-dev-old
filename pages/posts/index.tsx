@@ -1,12 +1,4 @@
-import { useState } from "react";
-import {
-  Box,
-  Flex,
-  Container,
-  SimpleGrid,
-  Heading,
-  Input,
-} from "@chakra-ui/react";
+import { Box, Flex, Container, Heading, HStack } from "@chakra-ui/react";
 import { Layout, CardPost } from "components";
 import { getAllPosts } from "lib";
 
@@ -14,49 +6,28 @@ import type { NextPage } from "next";
 import type { Post } from "types";
 
 interface Props {
-  allPosts: Post[];
+  posts: Post[];
 }
 
-const Posts: NextPage<Props> = ({ allPosts }) => {
-  const [posts, setPosts] = useState<Post[]>(allPosts);
-  const [search, setSearch] = useState<string>("");
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const search = e.target.value;
-
-    setSearch(search);
-    setPosts(
-      allPosts.filter((post: Post) =>
-        post.title.toLowerCase().includes(search.toLowerCase())
-      )
-    );
-  };
-
+const Posts: NextPage<Props> = ({ posts }) => {
   return (
     <Layout
       title="ENDEVRS | Posts"
       description="Posts created by Seth on various web development topics."
     >
-      <Flex p={8} mt={20} flex={1} align="center" direction="column">
+      <Flex p={8} mt={20} flex={1} direction="column">
         <Container maxW="container.lg">
           <Heading fontSize={{ base: "3xl", lg: "5xl" }} mb={5}>
             Posts
           </Heading>
 
-          <Input
-            placeholder="Search posts by title, tag, etc."
-            value={search}
-            onChange={handleChange}
-            mb={5}
-          />
-
-          <SimpleGrid minChildWidth="120px" spacing="40px">
+          <HStack>
             {posts?.map((post: Post, idx) => (
               <Box key={`${idx}-${post.slug}`}>
                 <CardPost {...post} />
               </Box>
             ))}
-          </SimpleGrid>
+          </HStack>
         </Container>
       </Flex>
     </Layout>
@@ -66,7 +37,7 @@ const Posts: NextPage<Props> = ({ allPosts }) => {
 export default Posts;
 
 export async function getStaticProps() {
-  const allPosts = getAllPosts([
+  const posts = getAllPosts([
     "title",
     "series",
     "tags",
@@ -77,6 +48,6 @@ export async function getStaticProps() {
   ]);
 
   return {
-    props: { allPosts },
+    props: { posts },
   };
 }
