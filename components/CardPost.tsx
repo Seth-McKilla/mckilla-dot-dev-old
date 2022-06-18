@@ -28,12 +28,12 @@ export default function CardPost({
     <Center py={6}>
       <Box
         as={motion.div}
-        maxW={{ base: 300, md: 350 }}
+        maxW={{ base: 300, sm: 350 }}
         w="full"
         bg={useColorModeValue("white", "gray.900")}
         boxShadow="2xl"
         rounded="md"
-        p={6}
+        p={5}
         overflow="hidden"
         cursor="pointer"
         whileHover={{ scale: 1.025 }}

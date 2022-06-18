@@ -1,5 +1,5 @@
 ---
-title: Setup a starter NextJS SaaS web app deployed to Vercel
+title: NextJS SaaS web app deployed to Vercel
 series: "The Roadmapp (#1)"
 tags: "Typescript,NextJS,Chakra, Stripe, Vercel"
 excerpt: "Let's create a SaaS application using Typescript, NextJS, Chakra UI, and Stripe deployed to Vercel."

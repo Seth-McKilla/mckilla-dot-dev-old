@@ -43,10 +43,10 @@ export default function Footer() {
           as={Stack}
           maxW="6xl"
           py={2}
-          direction={{ base: "column", md: "row" }}
+          direction={{ base: "column", sm: "row" }}
           spacing={4}
-          justify={{ base: "center", md: "space-between" }}
-          align={{ base: "center", md: "center" }}
+          justify={{ base: "center", sm: "space-between" }}
+          align={{ base: "center", sm: "center" }}
         >
           <Text fontSize="small">
             © {new Date().getFullYear()} ENDEVRS, LLC. All rights reserved
