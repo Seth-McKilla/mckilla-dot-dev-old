@@ -6,17 +6,28 @@ interface Props {
   label: string;
   href: string;
   size?: number;
+  color?: string;
+  hoverColor?: string;
 }
 
-export default function LinkIcon({ children, label, href, size = 8 }: Props) {
+export default function LinkIcon({
+  children,
+  label,
+  href,
+  size = 8,
+  color = "gray.800",
+  hoverColor = "black",
+}: Props) {
   return (
     <chakra.button
       rounded="full"
-      _hover={{
-        bg: useColorModeValue("blue.100", "blue.100"),
-      }}
       w={size}
       h={size}
+      fontSize={size * 3}
+      color={color}
+      _hover={{
+        color: hoverColor,
+      }}
       cursor="pointer"
       as="a"
       href={href}
@@ -26,7 +37,6 @@ export default function LinkIcon({ children, label, href, size = 8 }: Props) {
       alignItems="center"
       justifyContent="center"
       transition="background 0.3s ease"
-      fontSize={size * 2.5}
     >
       <VisuallyHidden>{label}</VisuallyHidden>
       {children}

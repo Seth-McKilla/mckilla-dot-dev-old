@@ -108,6 +108,7 @@ const AboutMe: NextPage = () => {
                 label="Typescript"
                 href="https://typescript.org/"
                 size={14}
+                hoverColor="blue.600"
               >
                 <SiTypescript />
               </LinkIcon>
@@ -118,6 +119,7 @@ const AboutMe: NextPage = () => {
                 label="Chakra UI"
                 href="https://chakra-ui.com/"
                 size={14}
+                hoverColor="teal.500"
               >
                 <SiChakraui />
               </LinkIcon>
@@ -137,6 +139,7 @@ const AboutMe: NextPage = () => {
                 label="Twitter"
                 href="https://twitter.com/sethmckilla"
                 size={14}
+                hoverColor="twitter.500"
               >
                 <FaTwitter />
               </LinkIcon>
