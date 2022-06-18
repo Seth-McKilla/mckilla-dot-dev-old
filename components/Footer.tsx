@@ -26,6 +26,11 @@ export default function Footer() {
         <Stack direction={"row"} spacing={6} p={2}>
           <Link href="/">Home</Link>
           <Link href="mailto:seth@endevrs.dev">Contact</Link>
+          <Link href="https://github.com/sponsors/Seth-McKilla" passHref>
+            <a target="_blank" rel="noopener noreferrer">
+              Sponsor
+            </a>
+          </Link>
         </Stack>
       </Container>
 
