@@ -106,7 +106,7 @@ const AboutMe: NextPage = () => {
             <HStack spacing={6}>
               <LinkIcon
                 label="Typescript"
-                href="https://typescript.org/"
+                href="https://www.typescriptlang.org/"
                 size={14}
                 hoverColor="blue.600"
               >
