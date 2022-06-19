@@ -35,7 +35,9 @@ export default function Home() {
                 lg: "2xl",
               }}
             >
-              {"I'm Seth, a full-stack web developer."}
+              {
+                "I'm Seth, a self-taught full stack JavaScript developer from the East Coast of the US."
+              }
               <br />
               {
                 "Thanks for stopping by to check out my endeavors in software development!"

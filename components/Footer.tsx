@@ -49,7 +49,7 @@ export default function Footer() {
           align={{ base: "center", sm: "center" }}
         >
           <Text fontSize="small">
-            © {new Date().getFullYear()} ENDEVRS, LLC. All rights reserved
+            © {new Date().getFullYear()} ENDEVRS, LLC. All rights reserved.
           </Text>
           <Stack direction="row" spacing={6}>
             <LinkIcon label="Twitter" href="https://twitter.com/sethmckilla">
