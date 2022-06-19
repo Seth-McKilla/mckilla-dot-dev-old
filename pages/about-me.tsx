@@ -9,13 +9,20 @@ import {
   HStack,
   VStack,
 } from "@chakra-ui/react";
-import { FaGithub, FaTwitter } from "react-icons/fa";
+import { FaNodeJs, FaGithub, FaTwitter } from "react-icons/fa";
 import {
   SiTypescript,
   SiNextdotjs,
   SiChakraui,
-  SiVercel,
+  SiMaterialui,
+  SiMongodb,
+  SiJavascript,
+  SiReact,
+  SiRedux,
+  SiTailwindcss,
+  SiPrisma,
 } from "react-icons/si";
+import { GrMysql } from "react-icons/gr";
 import { Layout, LinkIcon } from "components";
 import { shuffle } from "utils";
 import headShot from "../public/seth-headshot.png";
@@ -101,9 +108,17 @@ const AboutMe: NextPage = () => {
             />
 
             <Heading fontSize={{ base: "xl", lg: "3xl" }} pt={4} pb={4}>
-              {"Preferred Stack"}
+              {"Stack Specialties"}
             </Heading>
             <HStack spacing={6}>
+              <LinkIcon
+                label="Javascript"
+                href="https://www.javascript.com/"
+                size={14}
+                hoverColor="#F0DB4F"
+              >
+                <SiJavascript />
+              </LinkIcon>
               <LinkIcon
                 label="Typescript"
                 href="https://www.typescriptlang.org/"
@@ -112,6 +127,24 @@ const AboutMe: NextPage = () => {
               >
                 <SiTypescript />
               </LinkIcon>
+              <LinkIcon
+                label="React"
+                href="https://reactjs.org/"
+                size={14}
+                hoverColor="#61DAFB"
+              >
+                <SiReact />
+              </LinkIcon>
+              <LinkIcon
+                label="Redux"
+                href="https://redux.js.org/"
+                size={14}
+                hoverColor="#764ABC"
+              >
+                <SiRedux />
+              </LinkIcon>
+            </HStack>
+            <HStack spacing={6}>
               <LinkIcon label="NextJS" href="https://nextjs.org/" size={14}>
                 <SiNextdotjs />
               </LinkIcon>
@@ -123,8 +156,55 @@ const AboutMe: NextPage = () => {
               >
                 <SiChakraui />
               </LinkIcon>
-              <LinkIcon label="Vercel" href="https://vercel.com/" size={14}>
-                <SiVercel />
+              <LinkIcon
+                label="MaterialUI"
+                href="https://mui.com/"
+                size={14}
+                hoverColor="#007FFF"
+              >
+                <SiMaterialui />
+              </LinkIcon>
+              <LinkIcon
+                label="TailwindCSS"
+                href="https://tailwindcss.com/"
+                size={14}
+                hoverColor="#38bDF8"
+              >
+                <SiTailwindcss />
+              </LinkIcon>
+            </HStack>
+            <HStack spacing={6}>
+              <LinkIcon
+                label="NodeJS"
+                href="https://nodejs.org/en/"
+                size={14}
+                hoverColor="#68A063"
+              >
+                <FaNodeJs />
+              </LinkIcon>
+              <LinkIcon
+                label="Prisma"
+                href="https://www.prisma.io/"
+                size={14}
+                hoverColor="#5A67D8"
+              >
+                <SiPrisma />
+              </LinkIcon>
+              <LinkIcon
+                label="MongoDB"
+                href="https://www.mongodb.com/"
+                size={14}
+                hoverColor="#3FA037"
+              >
+                <SiMongodb />
+              </LinkIcon>
+              <LinkIcon
+                label="MySQL"
+                href="https://www.mysql.com/"
+                size={14}
+                hoverColor="#00758F"
+              >
+                <GrMysql />
               </LinkIcon>
             </HStack>
 
