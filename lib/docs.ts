@@ -1,21 +1,12 @@
-import fs from "fs";
-import { join } from "path";
-import matter from "gray-matter";
+import { remark } from "remark";
+import html from "remark-html";
+import prism from "remark-prism";
 
-const docsDirectory = join(process.cwd(), "docs");
-
-export function getDocBySlug(slug: string) {
-  const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = join(docsDirectory, `${realSlug}.md`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
-  const { data, content } = matter(fileContents);
-
-  return { slug: realSlug, meta: data, content };
-}
-
-export function getAllDocs() {
-  const slugs = fs.readdirSync(docsDirectory);
-  const docs = slugs.map((slug) => getDocBySlug(slug));
-
-  return docs;
+export default async function markdownToHtml(markdown: string) {
+  const result = await remark()
+    // https://github.com/sergioramos/remark-prism/issues/265
+    .use(html, { sanitize: false })
+    .use(prism)
+    .process(markdown);
+  return result.toString();
 }
