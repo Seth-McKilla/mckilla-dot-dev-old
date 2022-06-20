@@ -1,2 +1,2 @@
-export * from "./api";
+export * from "./docs";
 export { default as mdToHtml } from "./mdToHtml";
