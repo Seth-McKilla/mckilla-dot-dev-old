@@ -14,16 +14,9 @@ import { motion } from "framer-motion";
 
 import type { Post } from "types";
 
-export default function CardPost({
-  title,
-  series,
-  tags,
-  excerpt,
-  image,
-  date,
-  readTime,
-  slug,
-}: Post) {
+export default function CardPost({ slug, meta }: Post) {
+  const { title, series, tags, excerpt, image, date, readTime } = meta;
+
   return (
     <Center py={6}>
       <Box

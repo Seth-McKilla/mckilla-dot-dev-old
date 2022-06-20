@@ -1,5 +1,5 @@
 import { Layout } from "components";
-import { getAllDocs, getDocBySlug, markdownToHtml } from "lib";
+import { getAllPosts, getPostBySlug, markdownToHtml } from "lib";
 
 import type { NextPage } from "next";
 
@@ -13,7 +13,7 @@ const Post: NextPage<Props> = ({ meta, content }) => {
 };
 
 export async function getStaticProps({ params }) {
-  const doc = getDocBySlug(params.slug);
+  const doc = getPostBySlug(params.slug);
   const content = await markdownToHtml(doc.content || "");
 
   return {
@@ -25,7 +25,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const docs = getAllDocs();
+  const docs = getAllPosts();
 
   return {
     paths: docs.map((doc) => {
