@@ -5,15 +5,13 @@ import { getAllPosts, getPostBySlug, markdownToHtml } from "lib";
 import type { NextPage, GetStaticProps, GetStaticPaths } from "next";
 import type { Post } from "types";
 
-const Post: NextPage<Post> = ({ meta, content }) => {
-  return (
-    <Layout title={meta.title} description={meta.description}>
-      <Flex mt={20} p={{ base: 0, sm: 8 }} flex={1} direction="column">
-        <Container maxW="container.lg">{content}</Container>
-      </Flex>
-    </Layout>
-  );
-};
+const Post: NextPage<Post> = ({ meta, content }) => (
+  <Layout title={meta.title} description={meta.description}>
+    <Flex mt={20} p={{ base: 0, sm: 8 }} flex={1} direction="column">
+      <Container maxW="container.lg">{content}</Container>
+    </Flex>
+  </Layout>
+);
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const post = getPostBySlug(params!.slug as string);
