@@ -1,2 +1,2 @@
-export * from "./docs";
-export { default as markdown } from "./markdown";
+export * from "./posts";
+export { default as markdownToHtml } from "./markdown";

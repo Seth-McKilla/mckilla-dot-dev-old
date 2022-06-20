@@ -38,8 +38,6 @@ const Posts: NextPage<Props> = ({ posts }) => {
   );
 };
 
-export default Posts;
-
 export async function getStaticProps() {
   const posts = getAllPosts([
     "title",
@@ -56,3 +54,5 @@ export async function getStaticProps() {
     props: { posts },
   };
 }
+
+export default Posts;

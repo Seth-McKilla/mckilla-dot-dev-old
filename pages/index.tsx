@@ -1,7 +1,9 @@
 import { Container, Flex, Heading, Text, Image, Stack } from "@chakra-ui/react";
 import { Layout } from "components";
 
-export default function Home() {
+import type { NextPage } from "next";
+
+const Home: NextPage = () => {
   return (
     <Layout
       title="Welcome to ENDEVRS"
@@ -58,4 +60,6 @@ export default function Home() {
       </Flex>
     </Layout>
   );
-}
+};
+
+export default Home;
