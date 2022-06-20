@@ -1,2 +1,2 @@
 export * from "./docs";
-export { default as mdToHtml } from "./mdToHtml";
+export { default as markdown } from "./markdown";
