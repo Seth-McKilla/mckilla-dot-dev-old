@@ -15,7 +15,7 @@ import { motion } from "framer-motion";
 import type { Post } from "types";
 
 export default function CardPost({ slug, meta }: Post) {
-  const { title, series, tags, excerpt, image, date, readTime } = meta;
+  const { title, series, tags, description, image, date, readTime } = meta;
 
   return (
     <Center py={6}>
@@ -53,7 +53,7 @@ export default function CardPost({ slug, meta }: Post) {
             {title}
           </Heading>
           <Text color={useColorModeValue("gray.700", "gray.300")}>
-            {excerpt}
+            {description}
           </Text>
         </Stack>
         <Text color={"gray.400"} mb={4} mt={2} fontSize="sm">
