@@ -6,7 +6,7 @@ import type { NextPage, GetStaticProps, GetStaticPaths } from "next";
 import type { Post } from "types";
 
 const Post: NextPage<Post> = ({ meta, content }) => (
-  <Layout title={meta.title} description={meta.description}>
+  <Layout title={`ENDEVRS | ${meta.title}`} description={meta.description}>
     <Flex mt={20} p={{ base: 0, sm: 8 }} flex={1} direction="column">
       <Container maxW="container.lg">
         <article dangerouslySetInnerHTML={{ __html: content }} />

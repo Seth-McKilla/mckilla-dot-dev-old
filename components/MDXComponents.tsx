@@ -8,7 +8,7 @@ interface Props {
 
 const CustomLink = (props: Props) => {
   const href = props.href;
-  const isInternalLink = href && (href.startsWith("/") || href.startsWith("#"));
+  const isInternalLink = href?.startsWith("/") || href?.startsWith("#");
 
   if (isInternalLink) {
     return (
