@@ -1,18 +1,24 @@
 import { Flex, Container } from "@chakra-ui/react";
-import { Layout } from "components";
+import { PostLayout } from "layouts";
 import { getAllPosts, getPostBySlug, markdownToHtml } from "lib";
 
 import type { NextPage, GetStaticProps, GetStaticPaths } from "next";
 import type { Post } from "types";
 
 const Post: NextPage<Post> = ({ meta, content }) => (
-  <Layout title={`ENDEVRS | ${meta.title}`} description={meta.description}>
+  <PostLayout
+    meta={{
+      title: `ENDEVRS | ${meta.title}`,
+      description: meta.description,
+      cardImage: `images/posts/${meta.image}`,
+    }}
+  >
     <Flex mt={20} p={{ base: 0, sm: 8 }} flex={1} direction="column">
       <Container maxW="container.lg">
         <article dangerouslySetInnerHTML={{ __html: content }} />
       </Container>
     </Flex>
-  </Layout>
+  </PostLayout>
 );
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {

@@ -1,12 +1,15 @@
 import { Container, Flex, Heading, Text, Image, Stack } from "@chakra-ui/react";
-import { Layout } from "components";
+import { BasicLayout } from "layouts";
 
 import type { NextPage } from "next";
 
 const Home: NextPage = () => (
-  <Layout
-    title="Welcome to ENDEVRS"
-    description="Seth McKilla's endeavors in software development"
+  <BasicLayout
+    meta={{
+      title: "Welcome to ENDEVRS",
+      description: "Seth McKilla's endeavors in software development",
+      cardImage: "/images/logo-black.png",
+    }}
   >
     <Flex p={8} flex={1} align="center" justify="center" direction="column">
       <Container maxW="container.lg">
@@ -57,7 +60,7 @@ const Home: NextPage = () => (
         }}
       />
     </Flex>
-  </Layout>
+  </BasicLayout>
 );
 
 export default Home;

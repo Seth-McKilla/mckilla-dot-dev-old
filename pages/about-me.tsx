@@ -23,9 +23,9 @@ import {
   SiPrisma,
 } from "react-icons/si";
 import { GrMysql } from "react-icons/gr";
-import { Layout, LinkIcon } from "components";
+import { LinkIcon } from "components";
+import { BasicLayout } from "layouts";
 import { shuffle } from "utils";
-// import headshot from "../public/images/seth-headshot.png";
 
 import type { NextPage } from "next";
 
@@ -45,7 +45,13 @@ const passions = [
 ];
 
 const AboutMe: NextPage = () => (
-  <Layout title="ENDEVRS | About me" description="Get to know more about Seth.">
+  <BasicLayout
+    meta={{
+      title: "ENDEVRS | About me",
+      description: "Get to know more about Seth.",
+      cardImage: "/images/seth-headshot.png",
+    }}
+  >
     <Flex
       p={8}
       mt={20}
@@ -230,7 +236,7 @@ const AboutMe: NextPage = () => (
         </VStack>
       </Container>
     </Flex>
-  </Layout>
+  </BasicLayout>
 );
 
 export default AboutMe;

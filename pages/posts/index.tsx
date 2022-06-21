@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { Flex, Container, Heading, HStack } from "@chakra-ui/react";
-import { Layout, CardPost } from "components";
+import { CardPost } from "components";
+import { BasicLayout } from "layouts";
 import { getAllPosts } from "lib";
 
 import type { NextPage } from "next";
@@ -11,9 +12,13 @@ interface Props {
 }
 
 const Posts: NextPage<Props> = ({ posts }) => (
-  <Layout
-    title="ENDEVRS | Posts"
-    description="A list of articles on various web development topics including SaaS, NextJS, and Typescript."
+  <BasicLayout
+    meta={{
+      title: "ENDEVRS | Posts",
+      description:
+        "A list of articles on various web development topics including SaaS, NextJS, and Typescript.",
+      cardImage: "/images/logo-black.png",
+    }}
   >
     <Flex mt={20} p={{ base: 0, sm: 8 }} flex={1} direction="column">
       <Container maxW="container.lg">
@@ -30,7 +35,7 @@ const Posts: NextPage<Props> = ({ posts }) => (
         </HStack>
       </Container>
     </Flex>
-  </Layout>
+  </BasicLayout>
 );
 
 export async function getStaticProps() {

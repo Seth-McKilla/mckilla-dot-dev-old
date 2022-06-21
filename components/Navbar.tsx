@@ -55,7 +55,7 @@ export default function NavBar() {
           <Link href="/" passHref>
             <a>
               <Image
-                src="/images/logo_white.png"
+                src="/images/logo-white.png"
                 alt="endevrs-logo"
                 height={60}
                 width={233}
