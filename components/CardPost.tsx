@@ -35,7 +35,13 @@ export default function CardPost({ slug, meta }: Post) {
           whileTap={{ scale: 0.975 }}
         >
           <Box h="250px" bg="gray.100" mt={-6} mx={-6} mb={6} pos="relative">
-            <Image src={image} layout="fill" alt="preview image" />
+            <Image
+              src={`/images/posts/${image}`}
+              layout="fill"
+              alt="preview-image"
+              placeholder="blur"
+              blurDataURL={`/images/posts/${image}`}
+            />
           </Box>
           <Stack>
             <Text

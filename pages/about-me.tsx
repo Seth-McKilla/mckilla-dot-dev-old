@@ -25,7 +25,7 @@ import {
 import { GrMysql } from "react-icons/gr";
 import { Layout, LinkIcon } from "components";
 import { shuffle } from "utils";
-import headShot from "../public/seth-headshot.png";
+// import headshot from "../public/images/seth-headshot.png";
 
 import type { NextPage } from "next";
 
@@ -82,10 +82,10 @@ const AboutMe: NextPage = () => (
             mb={5}
           >
             <Image
+              src="/images/seth-headshot.png"
+              alt="seth-headshot"
               width={250}
               height={250}
-              src={headShot}
-              alt="seth-headshot"
             />
           </Box>
 
