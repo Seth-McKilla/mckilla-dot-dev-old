@@ -40,7 +40,7 @@ const Home: NextPage = () => (
             }}
           >
             {
-              "I'm Seth, a self-taught full stack JavaScript developer from the East Coast of the US."
+              "I'm Seth, a self-taught full stack JavaScript developer from the East Coast US."
             }
             <br />
             {
@@ -56,7 +56,7 @@ const Home: NextPage = () => (
         objectFit="cover"
         src="https://images.unsplash.com/photo-1569748130764-3fed0c102c59?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80"
         sx={{
-          filter: "blur(3px) brightness(40%)",
+          filter: "blur(2px) brightness(40%)",
         }}
       />
     </Flex>
