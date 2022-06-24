@@ -13,7 +13,7 @@ const Home: NextPage = () => (
     }}
   >
     <Flex p={8} flex={1} align="center" justify="center" direction="column">
-      <LinkGitHub href="https://github.com" />
+      <LinkGitHub path="index" />
       <Container maxW="container.lg">
         <Stack spacing={6} w="full" maxW="lg">
           <Heading

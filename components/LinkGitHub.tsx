@@ -2,10 +2,10 @@ import Link from "next/link";
 import { useColorModeValue } from "@chakra-ui/react";
 
 interface Props {
-  href: string;
+  path: string;
 }
 
-export default function LinkGitHub({ href }: Props) {
+export default function LinkGitHub({ path }: Props) {
   return (
     <svg
       width="75"
@@ -21,7 +21,10 @@ export default function LinkGitHub({ href }: Props) {
       }}
       aria-hidden="true"
     >
-      <Link href={href} passHref>
+      <Link
+        href={`https://github.com/Seth-McKilla/endevrs/blob/main/pages/${path}.tsx`}
+        passHref
+      >
         <a target="_blank" rel="noopener noreferrer">
           <>
             <path

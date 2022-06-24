@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { Flex, Container, Heading, HStack } from "@chakra-ui/react";
-import { CardPost } from "components";
 import { BasicLayout } from "layouts";
+import { CardPost, LinkGitHub } from "components";
 import { getAllPosts } from "lib";
 
 import type { NextPage } from "next";
@@ -21,6 +21,7 @@ const Posts: NextPage<Props> = ({ posts }) => (
     }}
   >
     <Flex mt={20} p={{ base: 0, sm: 8 }} flex={1} direction="column">
+      <LinkGitHub path="posts/index" />
       <Container maxW="container.lg">
         <Heading fontSize={{ base: "3xl", sm: "5xl" }} mb={{ base: 0, sm: 5 }}>
           Featured Posts
