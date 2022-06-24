@@ -1,5 +1,6 @@
 import { Container, Flex, Heading, Text, Image, Stack } from "@chakra-ui/react";
 import { BasicLayout } from "layouts";
+import { LinkGitHub } from "components";
 
 import type { NextPage } from "next";
 
@@ -12,6 +13,7 @@ const Home: NextPage = () => (
     }}
   >
     <Flex p={8} flex={1} align="center" justify="center" direction="column">
+      <LinkGitHub href="https://github.com" />
       <Container maxW="container.lg">
         <Stack spacing={6} w="full" maxW="lg">
           <Heading
