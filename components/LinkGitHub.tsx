@@ -1,31 +1,11 @@
-import { useState } from "react";
 import Link from "next/link";
-import { useColorModeValue, useMediaQuery, keyframes } from "@chakra-ui/react";
+import { useColorModeValue } from "@chakra-ui/react";
 
 interface Props {
   href: string;
 }
 
-const wave = keyframes`
-  0%,
-  100% {
-    transform: rotate(0);
-  }
-  20%,
-  60% {
-    transform: rotate(-25deg);
-  }
-  40%,
-  80% {
-    transform: rotate(10deg);
-  }
-`;
-
 export default function LinkGitHub({ href }: Props) {
-  const [isGreaterThan500] = useMediaQuery("(min-width: 500px)");
-
-  const [isHovering, setIsHovering] = useState<boolean>(false);
-
   return (
     <svg
       width="75"
@@ -42,12 +22,7 @@ export default function LinkGitHub({ href }: Props) {
       aria-hidden="true"
     >
       <Link href={href} passHref>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          onMouseEnter={() => setIsHovering(true)}
-          onMouseLeave={() => setIsHovering(false)}
-        >
+        <a target="_blank" rel="noopener noreferrer">
           <>
             <path
               fill={useColorModeValue("#EDF2F7", "#171923")}
