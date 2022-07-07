@@ -21,7 +21,7 @@ const Projects: NextPage = () => (
       justify="center"
       direction="column"
     >
-      <LinkGitHub path="Projects" />
+      <LinkGitHub path="projects/index" />
       <Container maxW="container.lg">
         <VStack>
           <Heading as="h1" size="xl">
