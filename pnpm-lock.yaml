@@ -6,6 +6,7 @@ specifiers:
   '@emotion/styled': ^11
   '@fontsource/inter': ^4.5.11
   '@mdx-js/loader': ^2.1.2
+  '@mdx-js/react': ^2.1.2
   '@next/mdx': ^12.1.6
   '@types/node': ^18.0.0
   '@types/react': ^18.0.14
@@ -31,7 +32,8 @@ dependencies:
   '@emotion/styled': 11.9.3_mtgmvqaicd2yfw2b4v4o2ssbiu
   '@fontsource/inter': 4.5.11
   '@mdx-js/loader': 2.1.2
-  '@next/mdx': 12.2.0_@mdx-js+loader@2.1.2
+  '@mdx-js/react': 2.1.2_react@18.2.0
+  '@next/mdx': 12.2.0_todqhrvd7cvbb36hzi2r6xttgq
   framer-motion: 6.3.16_biqbaboplfbrettd7655fr4n2y
   gray-matter: 4.0.3
   next: 12.2.0_biqbaboplfbrettd7655fr4n2y
@@ -1110,6 +1112,16 @@ packages:
       - supports-color
     dev: false
 
+  /@mdx-js/react/2.1.2_react@18.2.0:
+    resolution: {integrity: sha512-52e3DTJBrjsw3U51ZCdZ3N1IBaqnbzLIngCSXpKtiYiGr7PIqp3/P/+kym0MPTwBL/y9ZBmCieD8FyrXuEDrRw==}
+    peerDependencies:
+      react: '>=16'
+    dependencies:
+      '@types/mdx': 2.0.2
+      '@types/react': 18.0.14
+      react: 18.2.0
+    dev: false
+
   /@next/env/12.2.0:
     resolution: {integrity: sha512-/FCkDpL/8SodJEXvx/DYNlOD5ijTtkozf4PPulYPtkPOJaMPpBSOkzmsta4fnrnbdH6eZjbwbiXFdr6gSQCV4w==}
     dev: false
@@ -1120,13 +1132,14 @@ packages:
       glob: 7.1.7
     dev: true
 
-  /@next/mdx/12.2.0_@mdx-js+loader@2.1.2:
+  /@next/mdx/12.2.0_todqhrvd7cvbb36hzi2r6xttgq:
     resolution: {integrity: sha512-obWsgfD0/1+OOr4PMQlSal34uhIDxkFe9Db+LaFfRDbsmD8+gb0YevUOV5KBoleEHXfDku0WAPUUmPmDiAxu1w==}
     peerDependencies:
       '@mdx-js/loader': '>=0.15.0'
       '@mdx-js/react': '*'
     dependencies:
       '@mdx-js/loader': 2.1.2
+      '@mdx-js/react': 2.1.2_react@18.2.0
     dev: false
 
   /@next/swc-android-arm-eabi/12.2.0:

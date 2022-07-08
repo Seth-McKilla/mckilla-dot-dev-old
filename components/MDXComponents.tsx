@@ -1,6 +1,6 @@
 import NextLink from "next/link";
-import { Heading, Link } from "@chakra-ui/react";
 import Image from "next/image";
+import { Heading, Link } from "@chakra-ui/react";
 
 interface Props {
   [key: string]: any;

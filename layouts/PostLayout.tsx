@@ -1,17 +1,19 @@
 import Head from "next/head";
-import { Stack } from "@chakra-ui/react";
+import { Stack, Flex, Container } from "@chakra-ui/react";
+import { MDXProvider } from "@mdx-js/react";
+import { MDXComponents } from "components";
 
 import type { ReactNode } from "react";
-import type { Meta as MetaType } from "types";
+import type { Meta } from "types";
 
 interface Props {
   children: ReactNode;
-  meta: MetaType;
+  meta: Meta;
 }
 
 export default function PostLayout({ children, meta }: Props) {
   return (
-    <>
+    <MDXProvider components={MDXComponents}>
       <Head>
         <title>{meta.title}</title>
         <meta name="description" content={meta.description} />
@@ -38,9 +40,11 @@ export default function PostLayout({ children, meta }: Props) {
         />
       </Head>
 
-      <Stack minH="100vh" direction={{ base: "column", md: "row" }}>
-        {children}
+      <Stack minH="100vh">
+        <Flex mt={20} p={{ base: 0, sm: 8 }} flex={1} direction="column">
+          <Container maxW="container.lg">{children}</Container>
+        </Flex>
       </Stack>
-    </>
+    </MDXProvider>
   );
 }
