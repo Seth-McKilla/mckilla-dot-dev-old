@@ -95,7 +95,7 @@ export default function NavBar() {
                   >
                     <a target="_blank" rel="noopener noreferrer">
                       <Button leftIcon={<FaHeart />} aria-label="heart">
-                        Sponsor
+                        {"Sponsor"}
                       </Button>
                     </a>
                   </Link>

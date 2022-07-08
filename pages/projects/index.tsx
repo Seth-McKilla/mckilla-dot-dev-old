@@ -25,7 +25,7 @@ const Projects: NextPage = () => (
       <Container maxW="container.lg">
         <VStack>
           <Heading as="h1" size="xl">
-            Projects placeholder
+            {"Projects placeholder"}
           </Heading>
         </VStack>
       </Container>

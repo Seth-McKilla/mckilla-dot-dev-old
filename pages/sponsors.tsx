@@ -25,7 +25,7 @@ const Sponsors: NextPage = () => (
       <Container maxW="container.lg">
         <VStack>
           <Heading as="h1" size="xl">
-            Sponsors placeholder
+            {"Sponsors placeholder"}
           </Heading>
         </VStack>
       </Container>

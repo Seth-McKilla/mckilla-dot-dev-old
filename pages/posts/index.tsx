@@ -24,7 +24,7 @@ const Posts: NextPage<Props> = ({ posts }) => (
       <LinkGitHub path="posts/index" />
       <Container maxW="container.lg">
         <Heading fontSize={{ base: "3xl", sm: "5xl" }} mb={{ base: 0, sm: 5 }}>
-          Featured Posts
+          {"Featured Posts"}
         </Heading>
 
         <HStack justify={{ base: "center", sm: "left" }}>

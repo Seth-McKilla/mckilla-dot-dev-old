@@ -34,7 +34,7 @@ const passions = [
   "React and the NextJS framework in particular.",
   "the Legend of Zelda series.",
   "Software as a Service.",
-  "the occassional hackathon.",
+  "the occasional hackathon.",
   "solving interesting problems with software.",
   "talking with / teaching others about software.",
   "collaborating with people who also have a passion for software.",

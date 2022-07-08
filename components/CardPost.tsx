@@ -65,7 +65,7 @@ export default function CardPost({ slug, meta }: Post) {
           </Text>
         </Stack>
         <Text color={"gray.400"} mb={4} mt={2} fontSize="sm">
-          {new Date(date).toLocaleDateString()} • {readTime} min read
+          {new Date(date).toLocaleDateString()} {"•"} {readTime} {"min read"}
         </Text>
         <Wrap>
           {tags.split(",").map((tag, idx) => (

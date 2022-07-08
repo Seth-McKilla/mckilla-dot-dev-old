@@ -24,11 +24,11 @@ export default function Footer() {
         align="center"
       >
         <Stack direction="row" spacing={6} p={2}>
-          <Link href="/">Home</Link>
-          <Link href="mailto:seth@endevrs.dev">Contact</Link>
+          <Link href="/">{"Home"}</Link>
+          <Link href="mailto:seth@endevrs.dev">{"Contact"}</Link>
           <Link href="https://github.com/sponsors/Seth-McKilla" passHref>
             <a target="_blank" rel="noopener noreferrer">
-              Sponsor
+              {"Sponsor"}
             </a>
           </Link>
         </Stack>
@@ -49,7 +49,8 @@ export default function Footer() {
           align={{ base: "center", sm: "center" }}
         >
           <Text fontSize="small">
-            © {new Date().getFullYear()} ENDEVRS, LLC. All rights reserved.
+            {"©"} {new Date().getFullYear()}{" "}
+            {"ENDEVRS, LLC. All rights reserved."}
           </Text>
           <Stack direction="row" spacing={6}>
             <LinkIcon label="Twitter" href="https://twitter.com/sethmckilla">
