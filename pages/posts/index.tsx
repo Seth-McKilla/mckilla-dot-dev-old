@@ -23,7 +23,14 @@ const Posts: NextPage<Props> = ({ posts }) => (
     <Flex mt={20} p={{ base: 0, sm: 8 }} flex={1} direction="column">
       <LinkGitHub path="posts/index" />
       <Container maxW="container.lg">
-        <Heading fontSize={{ base: "3xl", sm: "5xl" }} mb={{ base: 0, sm: 5 }}>
+        <Heading
+          fontSize={{ base: "3xl", sm: "5xl" }}
+          mb={{ base: 0, sm: 5 }}
+          textAlign={{
+            base: "center",
+            sm: "left",
+          }}
+        >
           {"Featured Posts"}
         </Heading>
 

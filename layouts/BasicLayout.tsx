@@ -22,7 +22,11 @@ export default function BasicLayout({ children, meta }: Props) {
         <link href="/favicon.ico" rel="shortcut icon" />
       </Head>
 
-      <Stack minH="100vh" direction={{ base: "column", md: "row" }}>
+      <Stack
+        minH="100vh"
+        direction={{ base: "column", md: "row" }}
+        pt={{ base: 10, md: 0 }}
+      >
         {children}
       </Stack>
     </>
