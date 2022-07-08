@@ -1,3 +1,4 @@
+import SyntaxHighlighter from "react-syntax-highlighter";
 import { PostLayout } from "layouts";
 
 export const meta = {
@@ -13,11 +14,17 @@ export const meta = {
 
 # Work In Progress
 
+<br />
+
 This is a list in markdown:
 
 - One
 - Two
 - Three
+
+This is a code block:
+
+<SyntaxHighlighter language="typescript">const foo="bar";</SyntaxHighlighter>
 
 export default ({ children }) => (
   <PostLayout meta={meta}>{children}</PostLayout>
