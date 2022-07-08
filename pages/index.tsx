@@ -12,7 +12,14 @@ const Home: NextPage = () => (
       cardImage: "/images/logo-black.png",
     }}
   >
-    <Flex p={8} flex={1} align="center" justify="center" direction="column">
+    <Flex
+      p={8}
+      flex={1}
+      align="center"
+      justify="center"
+      direction="column"
+      minH="100vh"
+    >
       <LinkGitHub path="index" />
       <Container maxW="container.lg">
         <Stack spacing={6} w="full" maxW="lg">
@@ -23,7 +30,7 @@ const Home: NextPage = () => (
             {"Welcome to"}
           </Heading>
           <Heading
-            fontSize={{ base: "4xl", md: "5xl", lg: "6xl" }}
+            fontSize={{ base: "5xl", lg: "6xl" }}
             mb={5}
             bgGradient={[
               "linear(to-t, blue.800, blue.300)",
@@ -62,7 +69,7 @@ const Home: NextPage = () => (
         </Stack>
       </Container>
     </Flex>
-    <Flex flex={1} overflow="hidden">
+    <Flex flex={1} overflow="hidden" minH="100vh">
       <Image
         alt="Login Image"
         objectFit="cover"
