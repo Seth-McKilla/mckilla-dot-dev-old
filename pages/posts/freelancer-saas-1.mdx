@@ -1,5 +1,6 @@
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { PostLayout } from "layouts";
+import { Footer } from "components";
 
 export const meta = {
   image: "nextjs-ts-chakra.png",
@@ -12,19 +13,19 @@ export const meta = {
   tags: "Typescript,NextJS,Chakra,Stripe,Vercel",
 };
 
-# Work In Progress
+# Heading
 
 <br />
-
-This is a list in markdown:
+Here's a list:
 
 - One
 - Two
 - Three
 
-This is a code block:
+<br />
+And a code block:
 
-<SyntaxHighlighter language="typescript">const foo="bar";</SyntaxHighlighter>
+<SyntaxHighlighter language="typescript">const foo = "bar";</SyntaxHighlighter>
 
 export default ({ children }) => (
   <PostLayout meta={meta}>{children}</PostLayout>
