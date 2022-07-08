@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useColorModeValue } from "@chakra-ui/react";
+import { Box, useColorModeValue } from "@chakra-ui/react";
 
 interface Props {
   path: string;
@@ -25,7 +25,7 @@ export default function LinkGitHub({ path }: Props) {
         href={`https://github.com/Seth-McKilla/endevrs/blob/main/pages/${path}.tsx`}
         passHref
       >
-        <a target="_blank" rel="noopener noreferrer">
+        <Box as="a" target="_blank" rel="noopener noreferrer">
           <>
             <path
               fill={useColorModeValue("#EDF2F7", "#171923")}
@@ -43,7 +43,7 @@ export default function LinkGitHub({ path }: Props) {
               fill={useColorModeValue("#2C5282", "#fff")}
             />
           </>
-        </a>
+        </Box>
       </Link>
     </svg>
   );

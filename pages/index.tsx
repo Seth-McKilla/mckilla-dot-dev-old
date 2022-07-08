@@ -1,4 +1,12 @@
-import { Container, Flex, Heading, Text, Image, Stack } from "@chakra-ui/react";
+import {
+  Container,
+  Flex,
+  Heading,
+  Text,
+  Image,
+  Stack,
+  HStack,
+} from "@chakra-ui/react";
 import { BasicLayout } from "layouts";
 import { LinkButton, LinkGitHub } from "components";
 
@@ -20,7 +28,7 @@ const Home: NextPage = () => (
             fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
             fontWeight="medium"
           >
-            Welcome to
+            {"Welcome to"}
           </Heading>
           <Heading
             fontSize={{ base: "4xl", md: "5xl", lg: "6xl" }}
@@ -32,7 +40,7 @@ const Home: NextPage = () => (
             bgClip="text"
             fontWeight="extrabold"
           >
-            ENDEVRS
+            {"ENDEVRS"}
           </Heading>
           <Text
             fontSize={{
@@ -49,7 +57,10 @@ const Home: NextPage = () => (
               "Thanks for stopping by to check out my endeavors in software development!"
             }
           </Text>
-          <LinkButton href="/about-me" label="About Me" />
+          <HStack spacing={8}>
+            <LinkButton href="/about-me" label="About Me" />
+            <LinkButton href="/projects" label="Projects" />
+          </HStack>
         </Stack>
       </Container>
     </Flex>
