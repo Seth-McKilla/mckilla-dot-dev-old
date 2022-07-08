@@ -1,12 +1,4 @@
-import {
-  Container,
-  Flex,
-  Heading,
-  Text,
-  Image,
-  Stack,
-  HStack,
-} from "@chakra-ui/react";
+import { Container, Flex, Heading, Text, Image, Stack } from "@chakra-ui/react";
 import { BasicLayout } from "layouts";
 import { LinkButton, LinkGitHub } from "components";
 
@@ -57,10 +49,16 @@ const Home: NextPage = () => (
               "Thanks for stopping by to check out my endeavors in software development!"
             }
           </Text>
-          <HStack spacing={8}>
+          <Stack
+            spacing={8}
+            direction={{
+              base: "column",
+              md: "row",
+            }}
+          >
             <LinkButton href="/about-me" label="About Me" />
             <LinkButton href="/projects" label="Projects" />
-          </HStack>
+          </Stack>
         </Stack>
       </Container>
     </Flex>
