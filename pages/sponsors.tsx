@@ -21,7 +21,7 @@ const Sponsors: NextPage = () => (
       justify="center"
       direction="column"
     >
-      <LinkGitHub path="sponsors" />
+      <LinkGitHub path="sponsors.tsx" />
       <Container maxW="container.lg">
         <VStack>
           <Heading as="h1" size="xl">

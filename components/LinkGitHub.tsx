@@ -22,7 +22,7 @@ export default function LinkGitHub({ path }: Props) {
       aria-hidden="true"
     >
       <Link
-        href={`https://github.com/Seth-McKilla/endevrs/blob/main/pages/${path}.tsx`}
+        href={`https://github.com/Seth-McKilla/endevrs/blob/main/pages/${path}`}
         passHref
       >
         <Box as="a" target="_blank" rel="noopener noreferrer">

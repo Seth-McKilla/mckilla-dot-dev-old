@@ -28,7 +28,7 @@ const Home: NextPage = () => (
       direction="column"
       minH="100vh"
     >
-      <LinkGitHub path="index" />
+      <LinkGitHub path="index.tsx" />
       <Container maxW="container.lg">
         <Stack spacing={6} w="full" maxW="lg">
           <Heading
