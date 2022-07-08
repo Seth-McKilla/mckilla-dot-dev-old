@@ -50,14 +50,17 @@ const Posts: NextPage<Props> = ({ posts }) => (
 export async function getStaticProps() {
   const postsDirectory = join(process.cwd(), "pages/posts");
   const postsList = fs.readdirSync(postsDirectory);
-  const postModules = await Promise.all(
+  const posts = await Promise.all(
     postsList
-      .filter((file) => file.endsWith(".mdx"))
-      .map(async (file) => import(`./${file}`))
+      .filter((filename) => filename.endsWith(".mdx"))
+      .map(async (filename) => {
+        const postModule = await import(`./${filename}`);
+        return {
+          slug: filename.replace(".mdx", ""),
+          meta: postModule.meta,
+        };
+      })
   );
-  const posts = postModules.map((postModule) => ({
-    meta: postModule.meta,
-  }));
 
   return {
     props: { posts },
