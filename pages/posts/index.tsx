@@ -1,8 +1,9 @@
+import fs from "fs";
+import { join } from "path";
 import { Fragment } from "react";
 import { Flex, Container, Heading, HStack } from "@chakra-ui/react";
 import { BasicLayout } from "layouts";
 import { CardPost, LinkGitHub } from "components";
-import { getAllPosts } from "lib";
 
 import type { NextPage } from "next";
 import type { Post } from "types";
@@ -47,7 +48,16 @@ const Posts: NextPage<Props> = ({ posts }) => (
 );
 
 export async function getStaticProps() {
-  const posts = getAllPosts();
+  const postsDirectory = join(process.cwd(), "pages/posts");
+  const postsList = fs.readdirSync(postsDirectory);
+  const postModules = await Promise.all(
+    postsList
+      .filter((file) => file.endsWith(".mdx"))
+      .map(async (file) => import(`./${file}`))
+  );
+  const posts = postModules.map((postModule) => ({
+    meta: postModule.meta,
+  }));
 
   return {
     props: { posts },

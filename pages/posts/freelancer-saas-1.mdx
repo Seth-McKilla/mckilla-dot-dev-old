@@ -1,6 +1,6 @@
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { PostLayout } from "layouts";
-import { Footer } from "components";
+import { LinkButton } from "components";
 
 export const meta = {
   image: "nextjs-ts-chakra.png",
@@ -26,6 +26,10 @@ Here's a list:
 And a code block:
 
 <SyntaxHighlighter language="typescript">const foo = "bar";</SyntaxHighlighter>
+
+And finally a React component:
+
+<LinkButton href="/posts">{"Back to posts"}</LinkButton>
 
 export default ({ children }) => (
   <PostLayout meta={meta}>{children}</PostLayout>

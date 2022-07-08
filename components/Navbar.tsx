@@ -32,6 +32,10 @@ const menuItems = [
     href: "/about-me",
   },
   {
+    label: "Projects",
+    href: "/projects",
+  },
+  {
     label: "Posts",
     href: "/posts",
   },

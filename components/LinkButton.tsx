@@ -1,13 +1,12 @@
 import Link from "next/link";
 import { Box } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-
 interface Props {
+  children: string;
   href: string;
-  label: string;
 }
 
-export default function LinkButton({ href, label }: Props) {
+export default function LinkButton({ children, href }: Props) {
   return (
     <Link href={href} passHref>
       <Box as="a" w="100%">
@@ -33,7 +32,7 @@ export default function LinkButton({ href, label }: Props) {
               bgGradient: "linear(to-r, blue.700, blue.500)",
             }}
           >
-            {label}
+            {children}
           </Box>
         </Box>
       </Box>

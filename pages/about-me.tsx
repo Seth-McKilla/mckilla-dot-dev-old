@@ -97,8 +97,11 @@ const AboutMe: NextPage = () => (
           </Box>
 
           <Heading fontSize={{ base: "xl", lg: "3xl" }} pb={4}>
-            {"Get to know me!"}
+            {"Hey, I'm Seth!"}
           </Heading>
+          <Text>
+            {"A self-taught full stack JS dev from the East Coast US."}
+          </Text>
           <Text>{"Some things I'm passionate about are..."}</Text>
           <Typewriter
             options={{

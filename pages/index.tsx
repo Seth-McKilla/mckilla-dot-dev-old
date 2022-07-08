@@ -49,12 +49,10 @@ const Home: NextPage = () => (
             }}
           >
             {
-              "I'm Seth, a self-taught full stack JavaScript developer from the East Coast US."
+              "Thanks for stopping by to check out my endeavors in software development."
             }
             <br />
-            {
-              "Thanks for stopping by to check out my endeavors in software development!"
-            }
+            {"Check out what I've been up to!"}
           </Text>
           <Stack
             spacing={8}
@@ -63,8 +61,8 @@ const Home: NextPage = () => (
               md: "row",
             }}
           >
-            <LinkButton href="/about-me" label="About Me" />
-            <LinkButton href="/projects" label="Projects" />
+            <LinkButton href="/posts">{"Posts"}</LinkButton>
+            <LinkButton href="/projects">{"Projects"}</LinkButton>
           </Stack>
         </Stack>
       </Container>
