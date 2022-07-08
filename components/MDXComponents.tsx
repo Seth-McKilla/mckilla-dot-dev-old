@@ -1,5 +1,7 @@
 import NextLink from "next/link";
 import Image from "next/image";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { Heading, Link } from "@chakra-ui/react";
 
 interface Props {
@@ -47,6 +49,11 @@ const MDXComponents = {
       placeholder="blur"
       alt={props.id}
     />
+  ),
+  code: (props: Props) => (
+    <SyntaxHighlighter language="typescript" {...props}>
+      {props.children}
+    </SyntaxHighlighter>
   ),
 };
 

@@ -1,4 +1,12 @@
-import { Container, Flex, Heading, Text, Image, Stack } from "@chakra-ui/react";
+import {
+  Container,
+  Flex,
+  Heading,
+  Text,
+  Image,
+  Stack,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { BasicLayout } from "layouts";
 import { LinkButton, LinkGitHub } from "components";
 
@@ -32,10 +40,10 @@ const Home: NextPage = () => (
           <Heading
             fontSize={{ base: "5xl", lg: "6xl" }}
             mb={5}
-            bgGradient={[
-              "linear(to-t, blue.800, blue.300)",
-              "linear(to-b, blue.300, blue.800)",
-            ]}
+            bgGradient={useColorModeValue(
+              "linear(to-r, blue.800, blue.600)",
+              "linear(to-r, blue.600, blue.400)"
+            )}
             bgClip="text"
             fontWeight="extrabold"
           >
@@ -52,7 +60,7 @@ const Home: NextPage = () => (
               "Thanks for stopping by to check out my endeavors in software development."
             }
             <br />
-            {"Check out what I've been up to!"}
+            {"See what I've been up to!"}
           </Text>
           <Stack
             spacing={8}
@@ -61,8 +69,8 @@ const Home: NextPage = () => (
               md: "row",
             }}
           >
-            <LinkButton href="/posts">{"Posts"}</LinkButton>
             <LinkButton href="/projects">{"Projects"}</LinkButton>
+            <LinkButton href="/posts">{"Posts"}</LinkButton>
           </Stack>
         </Stack>
       </Container>
