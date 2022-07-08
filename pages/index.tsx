@@ -1,6 +1,6 @@
 import { Container, Flex, Heading, Text, Image, Stack } from "@chakra-ui/react";
 import { BasicLayout } from "layouts";
-import { LinkGitHub } from "components";
+import { LinkButton, LinkGitHub } from "components";
 
 import type { NextPage } from "next";
 
@@ -49,6 +49,7 @@ const Home: NextPage = () => (
               "Thanks for stopping by to check out my endeavors in software development!"
             }
           </Text>
+          <LinkButton href="/about-me" label="About Me" />
         </Stack>
       </Container>
     </Flex>
