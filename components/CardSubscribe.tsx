@@ -1,4 +1,4 @@
-import { FormEvent, ChangeEvent, useState } from "react";
+import { FormEvent, ChangeEvent, useState, useEffect } from "react";
 import {
   Stack,
   FormControl,
@@ -9,42 +9,58 @@ import {
   Text,
   Container,
   Flex,
+  CloseButton,
 } from "@chakra-ui/react";
 import { ImCheckmark } from "react-icons/im";
 
 export default function CardSubscribe() {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState<string>("");
   const [state, setState] = useState<"initial" | "submitting" | "success">(
     "initial"
   );
-  const [error, setError] = useState(false);
+  const [error, setError] = useState<boolean>(false);
+
+  const handleClose = () => {
+    localStorage.setItem("subscribeStatus", "declined");
+  };
 
   return (
     <Flex
-      minH={"100vh"}
-      align={"center"}
-      justify={"center"}
-      bg={useColorModeValue("gray.50", "gray.800")}
+      position="fixed"
+      top={{ base: 10, sm: "auto" }}
+      bottom={{ base: "auto", sm: 5 }}
+      right={{ base: "auto", sm: 5 }}
+      left={{ base: "auto", sm: "auto" }}
+      width={{ base: "100%", sm: "auto" }}
+      align="center"
+      justify="center"
+      bg={useColorModeValue("white", "gray.800")}
+      borderRadius="lg"
+      boxShadow="lg"
     >
-      <Container
-        maxW={"lg"}
-        bg={useColorModeValue("white", "whiteAlpha.100")}
-        boxShadow={"xl"}
-        rounded={"lg"}
-        p={6}
-      >
+      <Container maxW="lg" p={6}>
+        <CloseButton
+          aria-label="Close"
+          size="sm"
+          sx={{
+            position: "absolute",
+            top: 2,
+            right: 2,
+          }}
+          onClick={handleClose}
+        />
         <Heading
-          as={"h2"}
+          as="h2"
           fontSize={{ base: "xl", sm: "2xl" }}
-          textAlign={"center"}
+          textAlign="center"
           mb={5}
         >
           Subscribe to the Newsletter
         </Heading>
         <Stack
-          direction={{ base: "column", md: "row" }}
-          as={"form"}
-          spacing={"12px"}
+          direction={{ base: "column", sm: "row" }}
+          as="form"
+          spacing="12px"
           onSubmit={(e: FormEvent) => {
             e.preventDefault();
             setError(false);
@@ -63,18 +79,18 @@ export default function CardSubscribe() {
         >
           <FormControl>
             <Input
-              variant={"solid"}
+              variant="solid"
               borderWidth={1}
-              color={"gray.800"}
+              color="gray.800"
               _placeholder={{
                 color: "gray.400",
               }}
               borderColor={useColorModeValue("gray.300", "gray.700")}
-              id={"email"}
-              type={"email"}
+              id="email"
+              type="email"
               required
-              placeholder={"Your Email"}
-              aria-label={"Your Email"}
+              placeholder="Your Email"
+              aria-label="Your Email"
               value={email}
               disabled={state !== "initial"}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -93,14 +109,10 @@ export default function CardSubscribe() {
             </Button>
           </FormControl>
         </Stack>
-        <Text
-          mt={2}
-          textAlign={"center"}
-          color={error ? "red.500" : "gray.500"}
-        >
+        <Text mt={2} textAlign="center" color={error ? "red.500" : "gray.500"}>
           {error
             ? "Oh no an error occurred! 😢 Please try again later."
-            : "You won't receive any spam! ✌️"}
+            : "One email per week, never any spam 🙅‍♂️"}
         </Text>
       </Container>
     </Flex>
