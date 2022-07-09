@@ -13,41 +13,39 @@ interface Props {
 }
 
 const Posts: NextPage<Props> = ({ posts }) => (
-  <>
-    <CardSubscribe />
-    <BasicLayout
-      meta={{
-        title: "ENDEVRS | Posts",
-        description:
-          "A list of articles on various web development topics including SaaS, NextJS, and Typescript.",
-        cardImage: "/images/logo-black.png",
-      }}
-    >
-      <Flex mt={20} p={{ base: 0, sm: 8 }} flex={1} direction="column">
-        <LinkGitHub path="posts/index.tsx" />
-        <Container maxW="container.lg">
-          <Heading
-            fontSize={{ base: "3xl", sm: "5xl" }}
-            mb={{ base: 0, sm: 5 }}
-            textAlign={{
-              base: "center",
-              sm: "left",
-            }}
-          >
-            {"Featured Posts"}
-          </Heading>
+  <BasicLayout
+    meta={{
+      title: "ENDEVRS | Posts",
+      description:
+        "A list of articles on various web development topics including SaaS, NextJS, and Typescript.",
+      cardImage: "/images/logo-black.png",
+    }}
+  >
+    <Flex mt={20} p={{ base: 0, sm: 8 }} flex={1} direction="column">
+      <LinkGitHub path="posts/index.tsx" />
+      <Container maxW="container.lg">
+        <Heading
+          fontSize={{ base: "3xl", sm: "5xl" }}
+          mb={{ base: 0, sm: 5 }}
+          textAlign={{
+            base: "center",
+            sm: "left",
+          }}
+        >
+          {"Featured Posts"}
+        </Heading>
 
-          <HStack justify={{ base: "center", sm: "left" }}>
-            {posts?.map((post: Post, idx) => (
-              <Fragment key={`${idx}-${post.slug}`}>
-                <CardPost {...post} />
-              </Fragment>
-            ))}
-          </HStack>
-        </Container>
-      </Flex>
-    </BasicLayout>
-  </>
+        <HStack justify={{ base: "center", sm: "left" }}>
+          {posts?.map((post: Post, idx) => (
+            <Fragment key={`${idx}-${post.slug}`}>
+              <CardPost {...post} />
+            </Fragment>
+          ))}
+        </HStack>
+      </Container>
+    </Flex>
+    <CardSubscribe />
+  </BasicLayout>
 );
 
 export async function getStaticProps() {
