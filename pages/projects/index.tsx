@@ -1,7 +1,7 @@
 import { Flex, Container, Heading, VStack } from "@chakra-ui/react";
 
 import { BasicLayout } from "layouts";
-import { LinkGitHub } from "components";
+import { CardSubscribe, LinkGitHub } from "components";
 
 import type { NextPage } from "next";
 
@@ -29,6 +29,7 @@ const Projects: NextPage = () => (
           </Heading>
         </VStack>
       </Container>
+      <CardSubscribe />
     </Flex>
   </BasicLayout>
 );

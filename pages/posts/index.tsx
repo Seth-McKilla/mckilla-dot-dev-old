@@ -3,7 +3,7 @@ import { join } from "path";
 import { Fragment } from "react";
 import { Flex, Container, Heading, HStack } from "@chakra-ui/react";
 import { BasicLayout } from "layouts";
-import { CardPost, LinkGitHub } from "components";
+import { CardPost, CardSubscribe, LinkGitHub } from "components";
 
 import type { NextPage } from "next";
 import type { Post } from "types";
@@ -44,6 +44,7 @@ const Posts: NextPage<Props> = ({ posts }) => (
         </HStack>
       </Container>
     </Flex>
+    <CardSubscribe />
   </BasicLayout>
 );
 

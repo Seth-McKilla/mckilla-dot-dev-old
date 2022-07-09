@@ -8,7 +8,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { BasicLayout } from "layouts";
-import { CardSubscribe, LinkButton, LinkGitHub } from "components";
+import { LinkButton, LinkGitHub } from "components";
 
 import type { NextPage } from "next";
 
@@ -86,7 +86,6 @@ const Home: NextPage = () => {
           }}
         />
       </Flex>
-      <CardSubscribe />
     </BasicLayout>
   );
 };
