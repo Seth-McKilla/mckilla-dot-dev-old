@@ -58,10 +58,10 @@ const Home: NextPage = () => {
               }}
             >
               {
-                "Thanks for stopping by to check out my endeavors in software development."
+                "Follow along in my endeavors to create profitable software by developing "
               }
-              <br />
-              {"See what I've been up to!"}
+              <em>mostly</em>
+              {" bootstrapped web applications in public."}
             </Text>
             <Stack
               spacing={8}
