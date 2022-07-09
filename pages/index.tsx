@@ -14,13 +14,6 @@ import { CardSubscribe, LinkButton, LinkGitHub } from "components";
 import type { NextPage } from "next";
 
 const Home: NextPage = () => {
-  const [showSubscribeCard, setShowSubscribeCard] = useState<boolean>(false);
-
-  useEffect(() => {
-    const subscribeStatus = localStorage.getItem("subscribeStatus");
-    if (subscribeStatus !== "subscribed") setShowSubscribeCard(true);
-  }, []);
-
   return (
     <BasicLayout
       meta={{
@@ -94,7 +87,7 @@ const Home: NextPage = () => {
           }}
         />
       </Flex>
-      {showSubscribeCard && <CardSubscribe />}
+      <CardSubscribe />
     </BasicLayout>
   );
 };
