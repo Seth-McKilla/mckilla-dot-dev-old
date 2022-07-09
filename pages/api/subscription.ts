@@ -26,6 +26,10 @@ export default async function handler(
           }),
         });
 
+        if (response.status !== 202) {
+          throw new Error("Failed to subscribe email!");
+        }
+
         return res.status(201).json({ message: "Success" });
       default:
         res.setHeader("Allow", ["PUT"]);
