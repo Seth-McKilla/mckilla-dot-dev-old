@@ -1,4 +1,4 @@
-import { FormEvent, ChangeEvent, useState, useEffect } from "react";
+import { FormEvent, useState, useEffect, useRef } from "react";
 import {
   Stack,
   FormControl,
@@ -13,18 +13,47 @@ import {
 } from "@chakra-ui/react";
 import { ImCheckmark } from "react-icons/im";
 
-export default function CardSubscribe() {
-  const [email, setEmail] = useState<string>("");
-  const [state, setState] = useState<"initial" | "submitting" | "success">(
-    "initial"
-  );
-  const [error, setError] = useState<boolean>(false);
+type SubscribeState = "init" | "submitting" | "success" | "fail";
 
-  const handleClose = () => {
-    localStorage.setItem("subscribeStatus", "declined");
+export default function CardSubscribe() {
+  const inputEl = useRef<HTMLInputElement>(null);
+  const [showSubscribe, setShowSubscribe] = useState<boolean>(false);
+  const [subscribeState, setSubscribeState] = useState<SubscribeState>("init");
+
+  const bgColor = useColorModeValue("white", "gray.800");
+  const inputBorderColor = useColorModeValue("gray.300", "gray.700");
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+
+    try {
+      await fetch("/api/subscription", {
+        body: JSON.stringify({
+          email: inputEl?.current?.value,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+      });
+
+      return setSubscribeState("success");
+    } catch (error) {
+      return setSubscribeState("fail");
+    }
   };
 
-  return (
+  const handleClose = () => {
+    sessionStorage.setItem("subscribeDeclined", "true");
+    return setShowSubscribe(false);
+  };
+
+  useEffect(() => {
+    const subscribeDeclined = sessionStorage.getItem("subscribeDeclined");
+    if (!subscribeDeclined) return setShowSubscribe(true);
+  }, []);
+
+  return showSubscribe ? (
     <Flex
       position="fixed"
       top={{ base: 10, sm: "auto" }}
@@ -34,7 +63,7 @@ export default function CardSubscribe() {
       width={{ base: "100%", sm: "auto" }}
       align="center"
       justify="center"
-      bg={useColorModeValue("white", "gray.800")}
+      bg={bgColor}
       borderRadius="lg"
       boxShadow="lg"
     >
@@ -61,21 +90,7 @@ export default function CardSubscribe() {
           direction={{ base: "column", sm: "row" }}
           as="form"
           spacing="12px"
-          onSubmit={(e: FormEvent) => {
-            e.preventDefault();
-            setError(false);
-            setState("submitting");
-
-            setTimeout(() => {
-              if (email === "fail@example.com") {
-                setError(true);
-                setState("initial");
-                return;
-              }
-
-              setState("success");
-            }, 1000);
-          }}
+          onSubmit={handleSubmit}
         >
           <FormControl>
             <Input
@@ -85,36 +100,37 @@ export default function CardSubscribe() {
               _placeholder={{
                 color: "gray.400",
               }}
-              borderColor={useColorModeValue("gray.300", "gray.700")}
+              borderColor={inputBorderColor}
               id="email"
               type="email"
               required
               placeholder="Your Email"
               aria-label="Your Email"
-              value={email}
-              disabled={state !== "initial"}
-              onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                setEmail(e.target.value)
-              }
+              ref={inputEl}
+              disabled={subscribeState !== "init"}
             />
           </FormControl>
           <FormControl w={{ base: "100%", md: "40%" }}>
             <Button
-              colorScheme={state === "success" ? "green" : "blue"}
-              isLoading={state === "submitting"}
               w="100%"
-              type={state === "success" ? "button" : "submit"}
+              colorScheme={subscribeState === "success" ? "green" : "blue"}
+              isLoading={subscribeState === "submitting"}
+              type={subscribeState === "success" ? "button" : "submit"}
             >
-              {state === "success" ? <ImCheckmark /> : "Submit"}
+              {subscribeState === "success" ? <ImCheckmark /> : "Submit"}
             </Button>
           </FormControl>
         </Stack>
-        <Text mt={2} textAlign="center" color={error ? "red.500" : "gray.500"}>
-          {error
+        <Text
+          mt={2}
+          textAlign="center"
+          color={subscribeState === "fail" ? "red.500" : "gray.500"}
+        >
+          {subscribeState === "fail"
             ? "Oh no an error occurred! 😢 Please try again later."
             : "One email per week, never any spam 🙅‍♂️"}
         </Text>
       </Container>
     </Flex>
-  );
+  ) : null;
 }
