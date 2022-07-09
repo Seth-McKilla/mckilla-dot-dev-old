@@ -4,13 +4,14 @@ import {
   FormControl,
   Input,
   Button,
-  useColorModeValue,
   Heading,
   Text,
   Container,
   Flex,
   CloseButton,
   Slide,
+  Show,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { ImCheckmark } from "react-icons/im";
 
@@ -67,8 +68,7 @@ export default function CardSubscribe({ showCloseButton = true }: Props) {
     <Slide in={true}>
       <Flex
         position="fixed"
-        top={{ base: 10, sm: "auto" }}
-        bottom={{ base: "auto", sm: 5 }}
+        bottom={{ base: 0, sm: 5 }}
         right={{ base: "auto", sm: 5 }}
         left={{ base: "auto", sm: "auto" }}
         width={{ base: "100%", sm: "auto" }}
@@ -78,7 +78,7 @@ export default function CardSubscribe({ showCloseButton = true }: Props) {
         borderRadius="lg"
         boxShadow="lg"
       >
-        <Container maxW="lg" p={6}>
+        <Container maxW="lg" p={{ base: "24px 32px 4px 32px", sm: 6 }}>
           {showCloseButton && (
             <CloseButton
               aria-label="Close"
@@ -91,18 +91,20 @@ export default function CardSubscribe({ showCloseButton = true }: Props) {
               onClick={handleClose}
             />
           )}
-          <Heading
-            as="h2"
-            fontSize={{ base: "xl", sm: "2xl" }}
-            textAlign="center"
-            mb={5}
-          >
-            Subscribe to the Newsletter
-          </Heading>
+          <Show above="sm">
+            <Heading
+              as="h2"
+              fontSize={{ base: "xl", sm: "2xl" }}
+              textAlign="center"
+              mb={5}
+            >
+              {"Subscribe to the Newsletter"}
+            </Heading>
+          </Show>
           <Stack
-            direction={{ base: "column", sm: "row" }}
+            direction="row"
             as="form"
-            spacing="12px"
+            spacing={{ base: "4px", sm: "12px" }}
             onSubmit={handleSubmit}
           >
             <FormControl>
@@ -123,7 +125,7 @@ export default function CardSubscribe({ showCloseButton = true }: Props) {
                 disabled={subscribeState !== "init"}
               />
             </FormControl>
-            <FormControl w={{ base: "100%", md: "40%" }}>
+            <FormControl w="40%">
               <Button
                 w="100%"
                 colorScheme={subscribeState === "success" ? "green" : "blue"}
@@ -131,7 +133,7 @@ export default function CardSubscribe({ showCloseButton = true }: Props) {
                 type={subscribeState === "success" ? "button" : "submit"}
                 disabled={subscribeState !== "init"}
               >
-                {subscribeState === "success" ? <ImCheckmark /> : "Submit"}
+                {subscribeState === "success" ? <ImCheckmark /> : "Sign Up"}
               </Button>
             </FormControl>
           </Stack>
