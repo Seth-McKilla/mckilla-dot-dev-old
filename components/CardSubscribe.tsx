@@ -15,7 +15,11 @@ import { ImCheckmark } from "react-icons/im";
 
 type SubscribeState = "init" | "submitting" | "success" | "fail";
 
-export default function CardSubscribe() {
+interface Props {
+  showCloseButton?: boolean;
+}
+
+export default function CardSubscribe({ showCloseButton = true }: Props) {
   const inputEl = useRef<HTMLInputElement>(null);
   const [showSubscribe, setShowSubscribe] = useState<boolean>(false);
   const [subscribeState, setSubscribeState] = useState<SubscribeState>("init");
@@ -27,6 +31,7 @@ export default function CardSubscribe() {
     e.preventDefault();
 
     try {
+      setSubscribeState("submitting");
       await fetch("/api/subscription", {
         body: JSON.stringify({
           email: inputEl?.current?.value,
@@ -34,7 +39,7 @@ export default function CardSubscribe() {
         headers: {
           "Content-Type": "application/json",
         },
-        method: "POST",
+        method: "PUT",
       });
 
       return setSubscribeState("success");
@@ -44,12 +49,12 @@ export default function CardSubscribe() {
   };
 
   const handleClose = () => {
-    sessionStorage.setItem("subscribeDeclined", "true");
+    localStorage.setItem("subscribeDeclined", "true");
     return setShowSubscribe(false);
   };
 
   useEffect(() => {
-    const subscribeDeclined = sessionStorage.getItem("subscribeDeclined");
+    const subscribeDeclined = localStorage.getItem("subscribeDeclined");
     if (!subscribeDeclined) return setShowSubscribe(true);
   }, []);
 
@@ -68,16 +73,18 @@ export default function CardSubscribe() {
       boxShadow="lg"
     >
       <Container maxW="lg" p={6}>
-        <CloseButton
-          aria-label="Close"
-          size="sm"
-          sx={{
-            position: "absolute",
-            top: 2,
-            right: 2,
-          }}
-          onClick={handleClose}
-        />
+        {showCloseButton && (
+          <CloseButton
+            aria-label="Close"
+            size="sm"
+            sx={{
+              position: "absolute",
+              top: 2,
+              right: 2,
+            }}
+            onClick={handleClose}
+          />
+        )}
         <Heading
           as="h2"
           fontSize={{ base: "xl", sm: "2xl" }}
