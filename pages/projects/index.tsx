@@ -1,7 +1,7 @@
 import { Flex, Container, Heading, VStack } from "@chakra-ui/react";
 
 import { BasicLayout } from "layouts";
-import { CardSubscribe, LinkGitHub } from "components";
+import { CardSubscribe, LinkGitHubSource } from "components";
 
 import type { NextPage } from "next";
 
@@ -21,7 +21,7 @@ const Projects: NextPage = () => (
       justify="center"
       direction="column"
     >
-      <LinkGitHub path="projects/index.tsx" />
+      <LinkGitHubSource path="projects/index.tsx" />
       <Container maxW="container.lg">
         <VStack>
           <Heading as="h1" size="xl">

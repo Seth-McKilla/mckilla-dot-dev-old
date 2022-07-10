@@ -24,7 +24,7 @@ import {
 } from "react-icons/si";
 import { GrMysql } from "react-icons/gr";
 import { BasicLayout } from "layouts";
-import { LinkGitHub, LinkIcon } from "components";
+import { LinkGitHubSource, LinkIcon } from "components";
 import { shuffle } from "utils";
 
 import type { NextPage } from "next";
@@ -60,7 +60,7 @@ const AboutMe: NextPage = () => (
       justify="center"
       direction="column"
     >
-      <LinkGitHub path="about-me.tsx" />
+      <LinkGitHubSource path="about-me.tsx" />
       <Container maxW="container.lg">
         <VStack>
           <Box

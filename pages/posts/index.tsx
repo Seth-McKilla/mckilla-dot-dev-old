@@ -3,7 +3,7 @@ import { join } from "path";
 import { Fragment } from "react";
 import { Flex, Container, Heading, HStack } from "@chakra-ui/react";
 import { BasicLayout } from "layouts";
-import { CardPost, CardSubscribe, LinkGitHub } from "components";
+import { CardPost, CardSubscribe, LinkGitHubSource } from "components";
 
 import type { NextPage } from "next";
 import type { Post } from "types";
@@ -22,7 +22,7 @@ const Posts: NextPage<Props> = ({ posts }) => (
     }}
   >
     <Flex mt={20} p={{ base: 0, sm: 8 }} flex={1} direction="column">
-      <LinkGitHub path="posts/index.tsx" />
+      <LinkGitHubSource path="posts/index.tsx" />
       <Container maxW="container.lg">
         <Heading
           fontSize={{ base: "3xl", sm: "5xl" }}

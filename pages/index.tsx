@@ -8,7 +8,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { BasicLayout } from "layouts";
-import { LinkButton, LinkGitHub } from "components";
+import { LinkButton, LinkGitHubSource } from "components";
 
 import type { NextPage } from "next";
 
@@ -29,7 +29,7 @@ const Home: NextPage = () => {
         direction="column"
         minH="100vh"
       >
-        <LinkGitHub path="index.tsx" />
+        <LinkGitHubSource path="index.tsx" />
         <Container maxW="container.lg">
           <Stack spacing={6} w="full" maxW="lg">
             <Heading

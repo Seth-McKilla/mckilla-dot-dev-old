@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { Stack, Flex, Container } from "@chakra-ui/react";
 import { MDXProvider } from "@mdx-js/react";
-import { LinkGitHub, MDXComponents } from "components";
+import { LinkGitHubSource, MDXComponents } from "components";
 
 import type { ReactNode } from "react";
 import type { Meta } from "types";
@@ -45,7 +45,7 @@ export default function PostLayout({ children, meta }: Props) {
 
       <Stack minH="100vh">
         <Flex mt={20} p={{ base: 0, sm: 8 }} flex={1} direction="column">
-          <LinkGitHub path={`posts/${pathname.split("/").pop()}.mdx`} />
+          <LinkGitHubSource path={`posts/${pathname.split("/").pop()}.mdx`} />
           <Container maxW="container.lg">{children}</Container>
         </Flex>
       </Stack>
