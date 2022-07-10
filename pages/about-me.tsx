@@ -102,7 +102,7 @@ const AboutMe: NextPage = () => (
           <Text>
             {"A self-taught full stack JS dev from the East Coast US."}
           </Text>
-          <Text>{"Some things I'm passionate about are..."}</Text>
+          <Text>{"Some things I'm passionate about..."}</Text>
           <Typewriter
             options={{
               strings: shuffle(passions),

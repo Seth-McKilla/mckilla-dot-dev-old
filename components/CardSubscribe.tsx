@@ -33,7 +33,7 @@ export default function CardSubscribe({ showCloseButton = true }: Props) {
   };
 
   const bgColor = useColorModeValue("white", "gray.900");
-  const inputColor = useColorModeValue("gray.500", "gray.300");
+  const inputColor = useColorModeValue("gray.700", "gray.300");
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -66,16 +66,18 @@ export default function CardSubscribe({ showCloseButton = true }: Props) {
 
   return showSubscribe ? (
     <Flex
-      position="fixed"
-      bottom={{ base: 0, sm: 5 }}
+      position={{ base: "relative", sm: "fixed" }}
+      top={{ base: 0, sm: "auto" }}
+      bottom={{ base: "auto", sm: 5 }}
       right={{ base: "auto", sm: 5 }}
       left={{ base: "auto", sm: "auto" }}
       width={{ base: "100%", sm: "auto" }}
       align="center"
       justify="center"
       bg={bgColor}
-      borderRadius="lg"
-      boxShadow="lg"
+      borderRadius={{ base: "none", sm: "lg" }}
+      borderBottom={{ base: "1px solid #909090", sm: "none" }}
+      boxShadow={{ base: "none", sm: "lg" }}
       maxW="400px"
     >
       <Container maxW="lg" p={{ base: "24px 32px 4px 32px", sm: 6 }}>
@@ -140,7 +142,7 @@ export default function CardSubscribe({ showCloseButton = true }: Props) {
         <Text
           mt={2}
           textAlign="center"
-          color={subscribeState === "fail" ? "red.500" : inputColor}
+          color={subscribeState === "fail" ? "blue.500" : inputColor}
         >
           {subscribeMessage[subscribeState]}
         </Text>

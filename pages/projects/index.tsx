@@ -1,4 +1,4 @@
-import { Flex, Container, Heading, VStack } from "@chakra-ui/react";
+import { Flex, Container, Heading, Text } from "@chakra-ui/react";
 
 import { BasicLayout } from "layouts";
 import { CardSubscribe, LinkGitHubSource } from "components";
@@ -13,23 +13,25 @@ const Projects: NextPage = () => (
       cardImage: "/images/seth-headshot.png",
     }}
   >
-    <Flex
-      p={8}
-      mt={20}
-      flex={1}
-      align="center"
-      justify="center"
-      direction="column"
-    >
-      <LinkGitHubSource path="projects/index.tsx" />
-      <Container maxW="container.lg">
-        <VStack>
-          <Heading as="h1" size="xl">
-            {"Projects placeholder"}
-          </Heading>
-        </VStack>
-      </Container>
+    <Flex mt={16} p={{ base: 0, sm: 8 }} flex={1} direction="column">
       <CardSubscribe />
+      <Container maxW="container.lg">
+        <Heading
+          mt={{ base: 3, sm: 0 }}
+          fontSize={{ base: "3xl", sm: "4xl" }}
+          mb={{ base: 0, sm: 5 }}
+          textAlign={{
+            base: "center",
+            sm: "left",
+          }}
+        >
+          {"Current Endeavor"}
+        </Heading>
+        <Text fontSize="xl">
+          {"This is a work in progress, check back soon!"}
+        </Text>
+      </Container>
+      <LinkGitHubSource path="projects/index.tsx" />
     </Flex>
   </BasicLayout>
 );

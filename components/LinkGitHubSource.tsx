@@ -1,4 +1,9 @@
-import { Box, Tooltip, useColorModeValue } from "@chakra-ui/react";
+import {
+  Box,
+  Tooltip,
+  useColorModeValue,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 import { VscGithub } from "react-icons/vsc";
 import { LinkIcon } from "components";
 
@@ -7,7 +12,8 @@ interface Props {
 }
 
 export default function LinkGitHubSource({ path }: Props) {
-  const hoverColor = useColorModeValue("blue.600", "blue.300");
+  const hoverColor = useColorModeValue("blue.500", "blue.300");
+  const size = useBreakpointValue({ base: 12, sm: 14 });
 
   return (
     <Tooltip label="Source code ↗" placement="right">
@@ -15,7 +21,8 @@ export default function LinkGitHubSource({ path }: Props) {
         <LinkIcon
           label="GitHub source code"
           href={`https://github.com/Seth-McKilla/endevrs/blob/main/pages/${path}`}
-          size={14}
+          size={size}
+          color="blue.700"
           hoverColor={hoverColor}
         >
           <VscGithub />

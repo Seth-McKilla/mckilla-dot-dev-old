@@ -21,11 +21,12 @@ const Posts: NextPage<Props> = ({ posts }) => (
       cardImage: "/images/logo-black.png",
     }}
   >
-    <Flex mt={20} p={{ base: 0, sm: 8 }} flex={1} direction="column">
-      <LinkGitHubSource path="posts/index.tsx" />
+    <Flex mt={16} p={{ base: 0, sm: 8 }} flex={1} direction="column">
+      <CardSubscribe />
       <Container maxW="container.lg">
         <Heading
-          fontSize={{ base: "3xl", sm: "5xl" }}
+          mt={{ base: 3, sm: 0 }}
+          fontSize={{ base: "3xl", sm: "4xl" }}
           mb={{ base: 0, sm: 5 }}
           textAlign={{
             base: "center",
@@ -43,8 +44,8 @@ const Posts: NextPage<Props> = ({ posts }) => (
           ))}
         </HStack>
       </Container>
+      <LinkGitHubSource path="posts/index.tsx" />
     </Flex>
-    <CardSubscribe />
   </BasicLayout>
 );
 
