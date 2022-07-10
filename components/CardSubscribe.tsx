@@ -27,12 +27,13 @@ export default function CardSubscribe({ showCloseButton = true }: Props) {
 
   const subscribeMessage: { [key: string]: string } = {
     init: "One email per week, never any spam 🙅‍♂️",
-    success: "Success! A confirmation email has been sent! 🚀",
+    success:
+      "Please check your inbox for an email to confirm your subscription 🚀",
     fail: "Oh no an error! 😭 Please try again later.",
   };
 
-  const bgColor = useColorModeValue("white", "gray.800");
-  const inputBorderColor = useColorModeValue("gray.300", "gray.700");
+  const bgColor = useColorModeValue("white", "gray.900");
+  const inputColor = useColorModeValue("gray.500", "gray.300");
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -75,6 +76,7 @@ export default function CardSubscribe({ showCloseButton = true }: Props) {
       bg={bgColor}
       borderRadius="lg"
       boxShadow="lg"
+      maxW="400px"
     >
       <Container maxW="lg" p={{ base: "24px 32px 4px 32px", sm: 6 }}>
         {showCloseButton && (
@@ -109,11 +111,11 @@ export default function CardSubscribe({ showCloseButton = true }: Props) {
             <Input
               variant="solid"
               borderWidth={1}
-              color="gray.800"
+              color={inputColor}
+              borderColor={inputColor}
               _placeholder={{
                 color: "gray.400",
               }}
-              borderColor={inputBorderColor}
               id="email"
               type="email"
               required
@@ -138,7 +140,7 @@ export default function CardSubscribe({ showCloseButton = true }: Props) {
         <Text
           mt={2}
           textAlign="center"
-          color={subscribeState === "fail" ? "red.500" : "gray.500"}
+          color={subscribeState === "fail" ? "red.500" : inputColor}
         >
           {subscribeMessage[subscribeState]}
         </Text>
