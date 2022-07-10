@@ -19,7 +19,7 @@ export default function CardPost({ slug, meta }: Post) {
   const { title, series, tags, description, image, date, readTime } = meta;
 
   return (
-    <Center py={6} zIndex={10}>
+    <Center py={6}>
       <Link href={`/posts/${slug}`}>
         <Box
           as={motion.div}

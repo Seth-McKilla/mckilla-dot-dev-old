@@ -9,7 +9,6 @@ import {
   Container,
   Flex,
   CloseButton,
-  Slide,
   Show,
   useColorModeValue,
 } from "@chakra-ui/react";
@@ -65,87 +64,85 @@ export default function CardSubscribe({ showCloseButton = true }: Props) {
   }, []);
 
   return showSubscribe ? (
-    <Slide in={true}>
-      <Flex
-        position="fixed"
-        bottom={{ base: 0, sm: 5 }}
-        right={{ base: "auto", sm: 5 }}
-        left={{ base: "auto", sm: "auto" }}
-        width={{ base: "100%", sm: "auto" }}
-        align="center"
-        justify="center"
-        bg={bgColor}
-        borderRadius="lg"
-        boxShadow="lg"
-      >
-        <Container maxW="lg" p={{ base: "24px 32px 4px 32px", sm: 6 }}>
-          {showCloseButton && (
-            <CloseButton
-              aria-label="Close"
-              size="sm"
-              sx={{
-                position: "absolute",
-                top: 2,
-                right: 2,
-              }}
-              onClick={handleClose}
-            />
-          )}
-          <Show above="sm">
-            <Heading
-              as="h2"
-              fontSize={{ base: "xl", sm: "2xl" }}
-              textAlign="center"
-              mb={5}
-            >
-              {"Subscribe to the Newsletter"}
-            </Heading>
-          </Show>
-          <Stack
-            direction="row"
-            as="form"
-            spacing={{ base: "4px", sm: "12px" }}
-            onSubmit={handleSubmit}
-          >
-            <FormControl>
-              <Input
-                variant="solid"
-                borderWidth={1}
-                color="gray.800"
-                _placeholder={{
-                  color: "gray.400",
-                }}
-                borderColor={inputBorderColor}
-                id="email"
-                type="email"
-                required
-                placeholder="Your Email"
-                aria-label="Your Email"
-                ref={inputEl}
-                disabled={subscribeState !== "init"}
-              />
-            </FormControl>
-            <FormControl w="40%">
-              <Button
-                w="100%"
-                colorScheme={subscribeState === "success" ? "green" : "blue"}
-                isLoading={subscribeState === "submitting"}
-                type={subscribeState === "success" ? "button" : "submit"}
-                disabled={subscribeState !== "init"}
-              >
-                {subscribeState === "success" ? <ImCheckmark /> : "Sign Up"}
-              </Button>
-            </FormControl>
-          </Stack>
-          <Text
-            mt={2}
+    <Flex
+      position="fixed"
+      bottom={{ base: 0, sm: 5 }}
+      right={{ base: "auto", sm: 5 }}
+      left={{ base: "auto", sm: "auto" }}
+      width={{ base: "100%", sm: "auto" }}
+      align="center"
+      justify="center"
+      bg={bgColor}
+      borderRadius="lg"
+      boxShadow="lg"
+    >
+      <Container maxW="lg" p={{ base: "24px 32px 4px 32px", sm: 6 }}>
+        {showCloseButton && (
+          <CloseButton
+            aria-label="Close"
+            size="sm"
+            sx={{
+              position: "absolute",
+              top: 2,
+              right: 2,
+            }}
+            onClick={handleClose}
+          />
+        )}
+        <Show above="sm">
+          <Heading
+            as="h2"
+            fontSize={{ base: "xl", sm: "2xl" }}
             textAlign="center"
-            color={subscribeState === "fail" ? "red.500" : "gray.500"}
+            mb={5}
           >
-            {subscribeMessage[subscribeState]}
-          </Text>
-        </Container>
-      </Flex>
-    </Slide>
+            {"Subscribe to the Newsletter"}
+          </Heading>
+        </Show>
+        <Stack
+          direction="row"
+          as="form"
+          spacing={{ base: "4px", sm: "12px" }}
+          onSubmit={handleSubmit}
+        >
+          <FormControl>
+            <Input
+              variant="solid"
+              borderWidth={1}
+              color="gray.800"
+              _placeholder={{
+                color: "gray.400",
+              }}
+              borderColor={inputBorderColor}
+              id="email"
+              type="email"
+              required
+              placeholder="Your Email"
+              aria-label="Your Email"
+              ref={inputEl}
+              disabled={subscribeState !== "init"}
+            />
+          </FormControl>
+          <FormControl w="40%">
+            <Button
+              w="100%"
+              colorScheme={subscribeState === "success" ? "green" : "blue"}
+              isLoading={subscribeState === "submitting"}
+              type={subscribeState === "success" ? "button" : "submit"}
+              disabled={subscribeState !== "init"}
+            >
+              {subscribeState === "success" ? <ImCheckmark /> : "Sign Up"}
+            </Button>
+          </FormControl>
+        </Stack>
+        <Text
+          mt={2}
+          textAlign="center"
+          color={subscribeState === "fail" ? "red.500" : "gray.500"}
+        >
+          {subscribeMessage[subscribeState]}
+        </Text>
+      </Container>
+    </Flex>
   ) : null;
 }
