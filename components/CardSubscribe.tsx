@@ -51,6 +51,7 @@ export default function CardSubscribe({ showCloseButton = true }: Props) {
 
     if (!response.ok) return setSubscribeState("fail");
 
+    localStorage.setItem("subscribed", "true");
     return setSubscribeState("success");
   };
 
@@ -61,7 +62,8 @@ export default function CardSubscribe({ showCloseButton = true }: Props) {
 
   useEffect(() => {
     const subscribeDeclined = sessionStorage.getItem("subscribeDeclined");
-    if (!subscribeDeclined) return setShowSubscribe(true);
+    const subscribed = localStorage.getItem("subscribed");
+    if (!subscribeDeclined && !subscribed) return setShowSubscribe(true);
   }, []);
 
   return showSubscribe ? (
