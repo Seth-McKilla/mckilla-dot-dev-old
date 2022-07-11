@@ -13,6 +13,7 @@
     "rehype",
     "SENDGRID",
     "Tailwindcss",
-    "translatey"
+    "translatey",
+    "wireframe"
   ]
 }

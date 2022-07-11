@@ -20,7 +20,8 @@
       "layouts/*": ["./layouts/*"],
       "lib/*": ["./lib/*"],
       "types/*": ["./types/*"],
-      "utils/*": ["./utils/*"]
+      "utils/*": ["./utils/*"],
+      "data/*": ["./data/*"]
     }
   },
   "include": ["next-env.d.ts", "types", "**/*.ts", "**/*.tsx"],

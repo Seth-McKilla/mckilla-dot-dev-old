@@ -10,14 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
-interface Props {
-  image: string;
-  name: string;
-  started: string;
-  description: string;
-  revenueType: "MRR" | "Presales";
-  revenueAmount: number;
-}
+import type { Project } from "types";
 
 export default function CardProject({
   image,
@@ -26,7 +19,7 @@ export default function CardProject({
   description,
   revenueType,
   revenueAmount,
-}: Props) {
+}: Project) {
   return (
     <Center py={6}>
       <Link href={`/projects/${name}`}>
