@@ -26,17 +26,26 @@ const Projects: NextPage<Props> = ({ projects }) => {
         <CardSubscribe />
         <Container maxW="container.lg">
           <Heading
-            mt={{ base: 3, sm: 0 }}
+            mt={{ base: 8, sm: 0 }}
             fontSize={{ base: "3xl", sm: "4xl" }}
-            mb={{ base: 0, sm: 5 }}
-            textAlign={{
-              base: "center",
-              sm: "left",
-            }}
+            mb={5}
           >
             {"Current Endeavor"}
           </Heading>
           <CardProject {...currentProject} />
+          <Heading mt={20} fontSize={{ base: "3xl", sm: "4xl" }} mb={5}>
+            {"Past Projects"}
+          </Heading>
+          <Text
+            fontSize={{
+              base: "lg",
+              md: "xl",
+            }}
+          >
+            {"Soon to be filled with my failures and "}
+            <em>hopefully</em>
+            {" some successes 🤞"}
+          </Text>
         </Container>
         <LinkGitHubSource path="projects/index.tsx" />
       </Flex>

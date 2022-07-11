@@ -25,13 +25,9 @@ const Posts: NextPage<Props> = ({ posts }) => (
       <CardSubscribe />
       <Container maxW="container.lg">
         <Heading
-          mt={{ base: 3, sm: 0 }}
+          mt={{ base: 8, sm: 0 }}
           fontSize={{ base: "3xl", sm: "4xl" }}
           mb={{ base: 0, sm: 5 }}
-          textAlign={{
-            base: "center",
-            sm: "left",
-          }}
         >
           {"Featured Posts"}
         </Heading>

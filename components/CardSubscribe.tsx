@@ -72,7 +72,6 @@ export default function CardSubscribe({ showCloseButton = true }: Props) {
       top={{ base: 0, sm: "auto" }}
       bottom={{ base: "auto", sm: 5 }}
       right={{ base: "auto", sm: 5 }}
-      left={{ base: "auto", sm: "auto" }}
       width={{ base: "100%", sm: "auto" }}
       align="center"
       justify="center"

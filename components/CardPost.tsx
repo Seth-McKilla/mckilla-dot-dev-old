@@ -23,7 +23,7 @@ export default function CardPost({ slug, meta }: Post) {
       <Link href={`/posts/${slug}`}>
         <Box
           as={motion.div}
-          maxW={{ base: 300, sm: 350 }}
+          maxW={{ base: "auto", sm: 350 }}
           w="full"
           bg={useColorModeValue("white", "gray.900")}
           boxShadow="2xl"
