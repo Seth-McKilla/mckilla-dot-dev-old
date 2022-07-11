@@ -53,15 +53,15 @@ export default function CardProject({
             >
               {name}
             </Heading>
-            <Text color={useColorModeValue("gray.700", "gray.300")}>
+            <Text color={useColorModeValue("gray.500", "gray.300")}>
               {"Started:"} {new Date(started).toLocaleDateString()}
             </Text>
             <Text color={useColorModeValue("gray.700", "gray.300")}>
               {description}
             </Text>
-            <Stack isInline spacing={2}>
-              <Text fontSize="xl">{revenueType}</Text>
-              <Text color="green.500" fontSize="xl">
+            <Stack isInline spacing={2} alignItems="center">
+              <Text fontSize="xl">{`${revenueType}:`}</Text>
+              <Text color="green.500" fontSize="2xl">
                 {revenueAmount.toLocaleString("en-US", {
                   style: "currency",
                   currency: "USD",
