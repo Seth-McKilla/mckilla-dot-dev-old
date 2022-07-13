@@ -16,7 +16,7 @@ const Home: NextPage = () => {
   return (
     <BasicLayout
       meta={{
-        title: "Welcome to ENDEVRS",
+        title: "ENDEVRS",
         description: "Seth McKilla's endeavors in software development",
         cardImage: "/images/logo-black.png",
       }}
