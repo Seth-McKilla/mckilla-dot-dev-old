@@ -59,10 +59,12 @@ export default function NavBar() {
           <Link href="/" passHref>
             <a>
               <Image
-                src="/images/logo-white.png"
+                src="/images/logo/abbr.png"
+                placeholder="blur"
+                blurDataURL="/images/logo/abbr.png"
                 alt="endevrs-logo"
-                height={60}
-                width={233}
+                height={50}
+                width={50}
               />
             </a>
           </Link>
