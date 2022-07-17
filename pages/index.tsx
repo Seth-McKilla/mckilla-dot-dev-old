@@ -1,3 +1,4 @@
+import NextImage from "next/image";
 import {
   Container,
   Flex,
@@ -5,7 +6,7 @@ import {
   Text,
   Image,
   Stack,
-  useColorModeValue,
+  useColorMode,
 } from "@chakra-ui/react";
 import { BasicLayout } from "layouts";
 import { LinkButton, LinkGitHubSource } from "components";
@@ -13,10 +14,12 @@ import { LinkButton, LinkGitHubSource } from "components";
 import type { NextPage } from "next";
 
 const Home: NextPage = () => {
+  const { colorMode } = useColorMode();
+
   return (
     <BasicLayout
       meta={{
-        title: "Welcome to ENDEVRS",
+        title: "ENDEVRS",
         description: "Seth McKilla's endeavors in software development",
         cardImage: "/images/logo-black.png",
       }}
@@ -33,23 +36,20 @@ const Home: NextPage = () => {
         <Container maxW="container.lg">
           <Stack spacing={6} w="full" maxW="lg">
             <Heading
-              fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
+              fontSize={{ base: "xl", md: "2xl", lg: "3xl" }}
               fontWeight="medium"
+              mb={4}
             >
               {"Welcome to"}
             </Heading>
-            <Heading
-              fontSize={{ base: "5xl", lg: "6xl" }}
-              mb={5}
-              bgGradient={useColorModeValue(
-                "linear(to-r, blue.800, blue.600)",
-                "linear(to-r, blue.600, blue.400)"
-              )}
-              bgClip="text"
-              fontWeight="extrabold"
-            >
-              {"ENDEVRS"}
-            </Heading>
+            <NextImage
+              src={`/images/logo/full-${colorMode}.png`}
+              alt="endevrs-logo"
+              placeholder="blur"
+              blurDataURL={`/images/logo/blur-${colorMode}.png`}
+              width={602}
+              height={108}
+            />
             <Text
               fontSize={{
                 base: "lg",
