@@ -11,10 +11,12 @@ const Projects: NextPage = () => {
     query: { name },
   } = useRouter();
 
+  const projectName = name?.toString().replace(/-/g, " ");
+
   return (
     <BasicLayout
       meta={{
-        title: `ENDEVRS | ${name}`,
+        title: `ENDEVRS ${projectName ? "| " + projectName : ""}`,
         description: "My current endeavor.",
         cardImage: "/images/seth-headshot.png",
       }}
@@ -27,7 +29,7 @@ const Projects: NextPage = () => {
             fontSize={{ base: "3xl", sm: "4xl" }}
             mb={5}
           >
-            {name}
+            {projectName}
           </Heading>
           <Text fontSize="xl">
             {"This is a work in progress, check back soon!"}
