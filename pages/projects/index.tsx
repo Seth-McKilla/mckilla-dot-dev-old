@@ -4,7 +4,7 @@ import { Flex, Container, Heading, Text } from "@chakra-ui/react";
 import { BasicLayout } from "layouts";
 import { CardProject, CardSubscribe, LinkGitHubSource } from "components";
 
-import type { NextPage, GetStaticPropsContext } from "next";
+import type { NextPage } from "next";
 import type { Project } from "types";
 
 interface Props {
@@ -61,18 +61,6 @@ export async function getStaticProps() {
     props: {
       projects,
     },
-  };
-}
-
-export async function getStaticPaths() {
-  const projectsJSON = fs.readFileSync("data/projects.json", "utf8");
-  const projects = JSON.parse(projectsJSON);
-
-  return {
-    paths: [
-      { params: { name: projects.map((project: Project) => project.name) } },
-    ],
-    fallback: false,
   };
 }
 
