@@ -44,7 +44,7 @@ const Projects: NextPage<Props> = ({ projects }) => {
           >
             {"Soon to be filled with my failures and "}
             <em>hopefully</em>
-            {" some successes 🤞"}
+            {" some successes... 🤞"}
           </Text>
         </Container>
         <LinkGitHubSource path="projects/index.tsx" />

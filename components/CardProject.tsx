@@ -28,16 +28,16 @@ export default function CardProject({
         whileHover={{ scale: 1.025 }}
         whileTap={{ scale: 0.975 }}
       >
-        <Box h="250px" bg="gray.100" mt={-6} mx={-6} mb={6} pos="relative">
-          <Image
-            src={`/images/projects/${name}/${image}`}
-            layout="fill"
-            alt="preview-image"
-            placeholder="blur"
-            blurDataURL={`/images/projects/${name}/${image}`}
-          />
-        </Box>
-        <Stack>
+        <Image
+          src={`/images/projects/${name}/${image}`}
+          alt="preview-image"
+          placeholder="blur"
+          blurDataURL={`/images/projects/${name}/${image}`}
+          width={500}
+          height={500}
+          style={{ overflow: "hidden" }}
+        />
+        <Stack mt={4}>
           <Heading
             color={useColorModeValue("gray.700", "white")}
             fontSize="2xl"
