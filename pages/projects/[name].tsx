@@ -1,10 +1,12 @@
+import fs from "fs";
 import { useRouter } from "next/router";
 import { Flex, Container, Heading, Text } from "@chakra-ui/react";
 
 import { BasicLayout } from "layouts";
 import { CardSubscribe, LinkGitHubSource } from "components";
 
-import type { NextPage } from "next";
+import type { NextPage, GetStaticPropsContext } from "next";
+import type { Project } from "types";
 
 const Projects: NextPage = () => {
   const {
@@ -40,5 +42,34 @@ const Projects: NextPage = () => {
     </BasicLayout>
   );
 };
+
+export async function getStaticProps({ params }: GetStaticPropsContext) {
+  const projectsJSON = fs.readFileSync("data/projects.json", "utf8");
+  const projects = JSON.parse(projectsJSON);
+
+  if (!projects.find((project: Project) => project.name === params?.name)) {
+    return {
+      props: {
+        statusCode: 404,
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
+}
+
+export async function getStaticPaths() {
+  const projectsJSON = fs.readFileSync("data/projects.json", "utf8");
+  const projects = JSON.parse(projectsJSON);
+
+  return {
+    paths: projects.map((project: Project) => ({
+      params: { name: project.name },
+    })),
+    fallback: false,
+  };
+}
 
 export default Projects;
