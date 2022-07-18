@@ -11,23 +11,51 @@ export default async function handler(
       case "PUT":
         const { email } = req.body;
 
-        const response = await fetch(`${baseUrl}/v3/marketing/contacts`, {
-          method: "PUT",
+        const subscribeResponse = await fetch(
+          `${baseUrl}/v3/marketing/contacts`,
+          {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${process.env.SENDGRID_API_KEY}`,
+            },
+            body: JSON.stringify({
+              contacts: [
+                {
+                  email,
+                },
+              ],
+            }),
+          }
+        );
+
+        if (!subscribeResponse.ok) {
+          throw new Error(subscribeResponse.statusText);
+        }
+
+        const emailResponse = await fetch(`${baseUrl}/v3/mail/send`, {
+          method: "POST",
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${process.env.SENDGRID_API_KEY}`,
           },
           body: JSON.stringify({
-            contacts: [
+            from: "seth@endevrs.dev",
+            personalizations: [
               {
-                email,
+                to: [
+                  {
+                    email,
+                  },
+                ],
               },
             ],
+            template_id: "d-41c37108565849b897aea32681fca7d2",
           }),
         });
 
-        if (!response.ok) {
-          throw new Error(response.statusText);
+        if (!emailResponse.ok) {
+          throw new Error(emailResponse.statusText);
         }
 
         return res.status(201).json({ message: "Success" });
