@@ -27,8 +27,7 @@ export default function CardSubscribe({ showCloseButton = true }: Props) {
 
   const subscribeMessage: { [key: string]: string } = {
     init: "One email per week, never any spam 🙅‍♂️",
-    success:
-      "Please check your inbox for an email to confirm your subscription 🚀",
+    success: "Thanks for signing up! A welcome email has been sent your way 🚀",
     fail: "Oh no an error! 😭 Please try again later.",
   };
 
