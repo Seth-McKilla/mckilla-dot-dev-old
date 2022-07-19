@@ -11,7 +11,7 @@ import {
   WrapItem,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import { Card } from "components";
 
 import type { Post } from "types";
 
@@ -21,19 +21,7 @@ export default function CardPost({ slug, meta }: Post) {
   return (
     <Center py={6}>
       <Link href={`/posts/${slug}`}>
-        <Box
-          as={motion.div}
-          maxW={{ base: "auto", sm: 350 }}
-          w="full"
-          bg={useColorModeValue("white", "gray.900")}
-          boxShadow="2xl"
-          rounded="md"
-          p={5}
-          overflow="hidden"
-          cursor="pointer"
-          whileHover={{ scale: 1.025 }}
-          whileTap={{ scale: 0.975 }}
-        >
+        <Card>
           <Box h="250px" bg="gray.100" mt={-6} mx={-6} mb={6} pos="relative">
             <Image
               src={`/images/posts/${image}`}
@@ -76,7 +64,7 @@ export default function CardPost({ slug, meta }: Post) {
               </WrapItem>
             ))}
           </Wrap>
-        </Box>
+        </Card>
       </Link>
     </Center>
   );

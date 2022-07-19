@@ -1,3 +1,5 @@
+import { Card } from "components";
+
 import type { ReactNode } from "react";
 
 interface Props {
@@ -13,5 +15,5 @@ export default function CardFinancialTotal({
   description,
   amount,
 }: Props) {
-  return <div>Hello</div>;
+  return <Card>Hello</Card>;
 }

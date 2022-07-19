@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Box, Heading, Text, Stack, useColorModeValue } from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import { Heading, Text, Stack, useColorModeValue } from "@chakra-ui/react";
+import { Card } from "components";
 
 import type { Project } from "types";
 
@@ -15,19 +15,7 @@ export default function CardProject({
 }: Project) {
   return (
     <Link href={`/projects/${name}`}>
-      <Box
-        as={motion.div}
-        maxW={{ base: "auto", sm: 350 }}
-        w="full"
-        bg={useColorModeValue("white", "gray.900")}
-        boxShadow="2xl"
-        rounded="md"
-        p={5}
-        overflow="hidden"
-        cursor="pointer"
-        whileHover={{ scale: 1.025 }}
-        whileTap={{ scale: 0.975 }}
-      >
+      <Card>
         <Image
           src={`/images/projects/${name}/${image}`}
           alt="preview-image"
@@ -62,7 +50,7 @@ export default function CardProject({
             </Text>
           </Stack>
         </Stack>
-      </Box>
+      </Card>
     </Link>
   );
 }
