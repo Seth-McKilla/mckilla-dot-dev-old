@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Box, useColorModeValue } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
@@ -5,10 +6,11 @@ import type { ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
+  href?: string;
 }
 
-export default function CardProject({ children }: Props) {
-  return (
+export default function Card({ children, href }: Props) {
+  const CardComponent = () => (
     <Box
       as={motion.div}
       maxW={{ base: "auto", sm: 350 }}
@@ -18,11 +20,19 @@ export default function CardProject({ children }: Props) {
       rounded="md"
       p={5}
       overflow="hidden"
-      cursor="pointer"
-      whileHover={{ scale: 1.025 }}
-      whileTap={{ scale: 0.975 }}
+      cursor={href ? "pointer" : "default"}
+      whileHover={{ scale: href ? 1.025 : 1 }}
+      whileTap={{ scale: href ? 0.975 : 1 }}
     >
       {children}
     </Box>
+  );
+
+  return href ? (
+    <Link href={href}>
+      <CardComponent />
+    </Link>
+  ) : (
+    <CardComponent />
   );
 }
