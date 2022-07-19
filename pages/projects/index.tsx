@@ -2,7 +2,7 @@ import fs from "fs";
 import { Flex, Container, Heading, Text } from "@chakra-ui/react";
 
 import { BasicLayout } from "layouts";
-import { CardProject, CardSubscribe, LinkGitHubSource } from "components";
+import { CardProject, Subscribe, LinkGitHubSource } from "components";
 
 import type { NextPage } from "next";
 import type { Project } from "types";
@@ -23,7 +23,7 @@ const Projects: NextPage<Props> = ({ projects }) => {
       }}
     >
       <Flex mt={16} p={{ base: 0, sm: 8 }} flex={1} direction="column">
-        <CardSubscribe />
+        <Subscribe />
         <Container maxW="container.lg">
           <Heading
             mt={{ base: 8, sm: 0 }}

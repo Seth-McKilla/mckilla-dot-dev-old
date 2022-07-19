@@ -20,7 +20,7 @@ interface Props {
   showCloseButton?: boolean;
 }
 
-export default function CardSubscribe({ showCloseButton = true }: Props) {
+export default function Subscribe({ showCloseButton = true }: Props) {
   const inputEl = useRef<HTMLInputElement>(null);
   const [showSubscribe, setShowSubscribe] = useState<boolean>(false);
   const [subscribeState, setSubscribeState] = useState<SubscribeState>("init");
