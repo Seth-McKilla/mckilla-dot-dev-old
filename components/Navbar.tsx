@@ -63,8 +63,8 @@ export default function NavBar() {
                 placeholder="blur"
                 blurDataURL="/images/logo/abbr.png"
                 alt="endevrs-logo"
-                height={50}
-                width={50}
+                height={40}
+                width={40}
               />
             </a>
           </Link>

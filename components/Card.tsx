@@ -30,7 +30,9 @@ export default function Card({ children, href }: Props) {
 
   return href ? (
     <Link href={href}>
-      <CardComponent />
+      <a>
+        <CardComponent />
+      </a>
     </Link>
   ) : (
     <CardComponent />
