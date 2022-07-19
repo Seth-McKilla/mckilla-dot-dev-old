@@ -34,7 +34,9 @@ const Projects: NextPage = () => {
             {projectName}
           </Heading>
           <Text fontSize="xl">
-            {"Exciting things are in the works, check back soon!"}
+            {
+              "Exciting things are in the works, keep checking in to view the progress!"
+            }
           </Text>
         </Container>
         <LinkGitHubSource path="projects/index.tsx" />
