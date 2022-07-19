@@ -1,9 +1,13 @@
 import fs from "fs";
 import { useRouter } from "next/router";
 import { Flex, Container, Heading, Text } from "@chakra-ui/react";
-
+import { GiExpense } from "react-icons/gi";
 import { BasicLayout } from "layouts";
-import { Subscribe, LinkGitHubSource } from "components";
+import {
+  CardFinancialTotal,
+  DialogSubscribe,
+  LinkGitHubSource,
+} from "components";
 
 import type { NextPage, GetStaticPropsContext } from "next";
 import type { Project } from "types";
@@ -24,7 +28,7 @@ const Projects: NextPage = () => {
       }}
     >
       <Flex mt={16} p={{ base: 0, sm: 8 }} flex={1} direction="column">
-        <Subscribe />
+        <DialogSubscribe />
         <Container maxW="container.lg">
           <Heading
             mt={{ base: 3, sm: 0 }}
@@ -33,11 +37,16 @@ const Projects: NextPage = () => {
           >
             {projectName}
           </Heading>
-          <Text fontSize="xl">
+          <Text fontSize="lg" mb={8}>
             {
-              "Exciting things are in the works, keep checking in to view the progress!"
+              "Exciting things are in the works, keep checking in to view the progress! Follow along with the actual code by clicking the GitHub icon in the bottom left corner 😉"
             }
           </Text>
+          <CardFinancialTotal
+            icon={<GiExpense size={24} />}
+            title="Total Expenses"
+            amount={0}
+          />
         </Container>
         <LinkGitHubSource path="projects/index.tsx" />
       </Flex>

@@ -3,7 +3,7 @@ import { join } from "path";
 import { Fragment } from "react";
 import { Flex, Container, Heading, HStack } from "@chakra-ui/react";
 import { BasicLayout } from "layouts";
-import { CardPost, Subscribe, LinkGitHubSource } from "components";
+import { CardPost, DialogSubscribe, LinkGitHubSource } from "components";
 
 import type { NextPage } from "next";
 import type { Post } from "types";
@@ -22,7 +22,7 @@ const Posts: NextPage<Props> = ({ posts }) => (
     }}
   >
     <Flex mt={16} p={{ base: 0, sm: 8 }} flex={1} direction="column">
-      <Subscribe />
+      <DialogSubscribe />
       <Container maxW="container.lg">
         <Heading
           mt={{ base: 8, sm: 0 }}
