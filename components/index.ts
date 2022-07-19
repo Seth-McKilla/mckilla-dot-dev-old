@@ -13,4 +13,6 @@ export { default as LinkGitHubSource } from "./LinkGitHubSource";
 export { default as LinkIcon } from "./LinkIcon";
 export { default as LinkText } from "./LinkText";
 
+export { default as TooltipQuestionMark } from "./TooltipQuestionMark";
+
 export { default as MDXComponents } from "./MDXComponents";

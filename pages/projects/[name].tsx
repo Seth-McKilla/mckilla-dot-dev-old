@@ -45,6 +45,7 @@ const Projects: NextPage = () => {
           <CardFinancialTotal
             icon={<GiExpense size={24} />}
             title="Total Expenses"
+            description="Total expenses for this project. Actual line items coming soon!"
             amount={0}
           />
         </Container>
