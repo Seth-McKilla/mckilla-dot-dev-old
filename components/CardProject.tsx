@@ -20,7 +20,7 @@ export default function CardProject({
 }: Project) {
   return (
     <Center py={6}>
-      <Card href={`/projects/${name}`}>
+      <Card href={`/projects/${name}`} maxW="350px">
         <Image
           src={`/images/projects/${name}/${image}`}
           alt="preview-image"

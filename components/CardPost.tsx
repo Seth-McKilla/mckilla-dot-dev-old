@@ -19,7 +19,7 @@ export default function CardPost({ slug, meta }: Post) {
 
   return (
     <Center py={6}>
-      <Card href={`/posts/${slug}`}>
+      <Card href={`/posts/${slug}`} maxW="350px">
         <Box h="250px" bg="gray.100" mt={-6} mx={-6} mb={6} pos="relative">
           <Image
             src={`/images/posts/${image}`}

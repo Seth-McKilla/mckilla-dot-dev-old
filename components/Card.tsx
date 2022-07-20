@@ -7,11 +7,13 @@ import type { ReactNode } from "react";
 interface Props {
   children: ReactNode;
   href?: string;
+  maxW?: string;
 }
 
-export default function Card({ children, href }: Props) {
+export default function Card({ children, href, maxW }: Props) {
   const CardComponent = () => (
     <Box
+    maxW={maxW}
       as={motion.div}
       bg={useColorModeValue("white", "gray.900")}
       boxShadow="2xl"
