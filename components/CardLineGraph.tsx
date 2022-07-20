@@ -27,12 +27,8 @@ export default function CardFinancialTotal({
           <Spacer />
           <TooltipQuestionMark label={description} />
         </Stack>
-        <Text
-          fontSize="3xl"
-          color={amount < 0 ? "red.500" : "green.400"}
-          fontWeight={600}
-        >
-          {`$ ${Math.abs(amount).toFixed(2)}`}
+        <Text fontSize="3xl" color="green.400" fontWeight={600}>
+          {`$ ${amount.toFixed(2)}`}
         </Text>
       </Stack>
     </Card>

@@ -3,6 +3,7 @@ export { default as Footer } from "./Footer";
 
 export { default as Card } from "./Card";
 export { default as CardFinancialTotal } from "./CardFinancialTotal";
+export { default as CardLineGraph } from "./CardLineGraph";
 export { default as CardPost } from "./CardPost";
 export { default as CardProject } from "./CardProject";
 

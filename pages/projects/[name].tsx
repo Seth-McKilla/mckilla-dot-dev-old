@@ -89,7 +89,7 @@ const Projects: NextPage = () => {
                 icon={<GiExpense size={24} />}
                 title="Total Expenses"
                 description="Total expenses for this project. Actual line items coming soon!"
-                amount={0} // Plaid API
+                amount={-0.001} // Plaid API
               />
             </GridItem>
             <GridItem colSpan={{ base: 6, md: 3, lg: 2 }}>
