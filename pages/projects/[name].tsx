@@ -110,7 +110,7 @@ const Projects: NextPage = () => {
             </GridItem>
           </Grid>
         </Container>
-        <LinkGitHubSource path="projects/index.tsx" />
+        <LinkGitHubSource path="projects/[name].tsx" />
       </Flex>
     </BasicLayout>
   );
