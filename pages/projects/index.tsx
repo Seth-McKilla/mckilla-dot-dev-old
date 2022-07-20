@@ -1,5 +1,5 @@
 import fs from "fs";
-import { Flex, Container, Heading, Text } from "@chakra-ui/react";
+import { Flex, Container, Heading, Text, HStack } from "@chakra-ui/react";
 
 import { BasicLayout } from "layouts";
 import { CardProject, DialogSubscribe, LinkGitHubSource } from "components";
@@ -32,7 +32,9 @@ const Projects: NextPage<Props> = ({ projects }) => {
           >
             {"Current Endeavor"}
           </Heading>
-          <CardProject {...currentProject} />
+          <HStack justify={{ base: "center", sm: "left" }}>
+            <CardProject {...currentProject} />
+          </HStack>
           <Heading mt={20} fontSize={{ base: "3xl", sm: "4xl" }} mb={5}>
             {"Past Projects"}
           </Heading>
