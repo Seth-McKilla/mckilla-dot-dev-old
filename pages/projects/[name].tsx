@@ -1,11 +1,12 @@
 import fs from "fs";
 import { useRouter } from "next/router";
-import { Flex, Container, Heading, Text } from "@chakra-ui/react";
+import { Flex, Container, Heading, Text, Box, HStack } from "@chakra-ui/react";
 import { GiExpense } from "react-icons/gi";
 import { BasicLayout } from "layouts";
 import {
   CardFinancialTotal,
   DialogSubscribe,
+  LinkButton,
   LinkGitHubSource,
 } from "components";
 
@@ -37,6 +38,12 @@ const Projects: NextPage = () => {
           >
             {projectName}
           </Heading>
+
+          <Box w={32} mb={4}>
+            <LinkButton href="https://freelancefinesse.com" size={8} isExternal>
+              {"Visit ↗️"}
+            </LinkButton>
+          </Box>
           <Text fontSize="lg" mb={8}>
             {
               "Exciting things are in the works, keep checking in to view the progress! Follow along with the actual code by clicking the GitHub icon in the bottom left corner 😉"

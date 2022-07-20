@@ -4,12 +4,24 @@ import { motion } from "framer-motion";
 interface Props {
   children: string;
   href: string;
+  size: number;
+  isExternal?: boolean;
 }
 
-export default function LinkButton({ children, href }: Props) {
+export default function LinkButton({
+  children,
+  href,
+  size,
+  isExternal,
+}: Props) {
   return (
     <Link href={href} passHref>
-      <Box as="a" w="100%">
+      <Box
+        as="a"
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noopener noreferrer" : undefined}
+        w="100%"
+      >
         <Box
           as={motion.div}
           w="100%"
@@ -21,6 +33,10 @@ export default function LinkButton({ children, href }: Props) {
         >
           <Box
             as="button"
+            boxSize={size}
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
             p={4}
             w="100%"
             color="white"
