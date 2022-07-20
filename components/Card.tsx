@@ -13,8 +13,6 @@ export default function Card({ children, href }: Props) {
   const CardComponent = () => (
     <Box
       as={motion.div}
-      maxW={{ base: "auto", sm: 350 }}
-      w="full"
       bg={useColorModeValue("white", "gray.900")}
       boxShadow="2xl"
       rounded="md"
