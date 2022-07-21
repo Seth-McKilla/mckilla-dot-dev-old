@@ -2,12 +2,11 @@ import { Line } from "react-chartjs-2";
 import { trailingTwelveMonths } from "constant";
 
 interface Props {
-  title: string;
   label: string;
   data: number[];
 }
 
-export default function DataVizLineGraph({ title, label, data }: Props) {
+export default function DataVizLineGraph({ label, data }: Props) {
   return (
     <Line
       data={{

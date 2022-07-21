@@ -1,5 +1,5 @@
 import { Box, Spacer, Stack, Text } from "@chakra-ui/react";
-import { Card, TooltipQuestionMark } from "components";
+import { Card, DataVizLineGraph, TooltipQuestionMark } from "components";
 
 import type { ReactNode } from "react";
 
@@ -7,14 +7,16 @@ interface Props {
   icon: ReactNode;
   title: string;
   description: string;
-  amount: number;
+  label: string;
+  data: number[];
 }
 
 export default function CardFinancialTotal({
   icon,
   title,
   description,
-  amount,
+  label,
+  data,
 }: Props) {
   return (
     <Card>
@@ -27,9 +29,7 @@ export default function CardFinancialTotal({
           <Spacer />
           <TooltipQuestionMark label={description} />
         </Stack>
-        <Text fontSize="3xl" color="green.400" fontWeight={600}>
-          {`$ ${amount.toFixed(2)}`}
-        </Text>
+        <DataVizLineGraph label={label} data={data} />
       </Stack>
     </Card>
   );
