@@ -1,5 +1,6 @@
 import { Box, Spacer, Stack, Text } from "@chakra-ui/react";
 import { Card, TooltipQuestionMark } from "components";
+import { toCurrency } from "utils/common";
 
 import type { ReactNode } from "react";
 
@@ -32,7 +33,7 @@ export default function CardFinancialTotal({
           color={amount < 0 ? "red.500" : "green.400"}
           fontWeight={600}
         >
-          {`$ ${Math.abs(amount).toFixed(2)}`}
+          {toCurrency(amount)}
         </Text>
       </Stack>
     </Card>

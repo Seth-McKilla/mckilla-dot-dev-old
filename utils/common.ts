@@ -14,3 +14,11 @@ export const shuffle = (array: string[]) => {
 
   return array;
 };
+
+export const toCurrency = (amount: number) => {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    minimumFractionDigits: 2,
+  }).format(Math.abs(amount));
+};

@@ -15,7 +15,6 @@ export default function CardFinancialTotal({
   icon,
   title,
   description,
-  label,
   data,
 }: Props) {
   return (
@@ -29,7 +28,7 @@ export default function CardFinancialTotal({
           <Spacer />
           <TooltipQuestionMark label={description} />
         </Stack>
-        <DataVizLineGraph label={label} data={data} />
+        <DataVizLineGraph data={data} lineColor="green.400" />
       </Stack>
     </Card>
   );

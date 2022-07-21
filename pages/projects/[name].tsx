@@ -16,6 +16,7 @@ import { BiDonateHeart } from "react-icons/bi";
 import { BasicLayout } from "layouts";
 import {
   CardFinancialTotal,
+  CardLineGraph,
   DialogSubscribe,
   LinkButton,
   LinkGitHubSource,
@@ -76,6 +77,15 @@ const Projects: NextPage = () => {
             templateColumns="repeat(6, 1fr)"
             pb={8}
           >
+            <GridItem colSpan={{ base: 6, md: 3, lg: 2 }}>
+              <CardLineGraph
+                icon={<GiProfit size={24} />}
+                title="Presales"
+                description="Total presales for this project."
+                label="Presales"
+                data={[0, 1, 2, 3, 2, 0, 1, 3, 8, 7, 6, 2]} // Stripe API
+              />
+            </GridItem>{" "}
             <GridItem colSpan={{ base: 6, md: 3, lg: 2 }}>
               <CardFinancialTotal
                 icon={<GiProfit size={24} />}
