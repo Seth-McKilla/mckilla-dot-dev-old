@@ -11,8 +11,8 @@ import {
   GridItem,
 } from "@chakra-ui/react";
 import { FaMoneyCheck } from "react-icons/fa";
-import { GiExpense, GiProfit } from "react-icons/gi";
-import { BiDonateHeart } from "react-icons/bi";
+import { GiExpense, GiProfit, GiBuyCard } from "react-icons/gi";
+import { BiDonateHeart, BiCar } from "react-icons/bi";
 import { BasicLayout } from "layouts";
 import {
   CardFinancialTotal,
@@ -79,14 +79,13 @@ const Projects: NextPage = () => {
           >
             <GridItem colSpan={{ base: 6, md: 3, lg: 2 }}>
               <CardLineGraph
-                icon={<GiProfit size={24} />}
+                icon={<GiBuyCard size={24} />}
                 title="Presales"
-                description="Total presales for this project."
-                label="Presales"
-                data={[0, 1, 2, 3, 2, 0, 1, 3, 8, 7, 6, 2]} // Stripe API
+                description="Total presales for trailing twelve months."
+                data={new Array(12).fill(0)} // Stripe API
                 isCurrency
               />
-            </GridItem>{" "}
+            </GridItem>
             <GridItem colSpan={{ base: 6, md: 3, lg: 2 }}>
               <CardFinancialTotal
                 icon={<GiProfit size={24} />}
@@ -99,7 +98,7 @@ const Projects: NextPage = () => {
               <CardFinancialTotal
                 icon={<GiExpense size={24} />}
                 title="Total Expenses"
-                description="Total expenses for this project. Actual line items coming soon!"
+                description="Total expenses from all sources. Actual line items coming soon!"
                 amount={-0.001} // Plaid API
               />
             </GridItem>
@@ -107,7 +106,7 @@ const Projects: NextPage = () => {
               <CardFinancialTotal
                 icon={<FaMoneyCheck size={24} />}
                 title="Total Profit"
-                description="Total profit for this project (i.e. revenue - expenses)."
+                description="Total profit (i.e. revenue - expenses)."
                 amount={0} // Stripe and Plaid APIs
               />
             </GridItem>
@@ -117,6 +116,14 @@ const Projects: NextPage = () => {
                 title="Altruism"
                 description="Total revenue donated to effective charities."
                 amount={0} // Manual entry or pulled from Stripe / Plaid API somehow
+              />
+            </GridItem>
+            <GridItem colSpan={{ base: 6, md: 3, lg: 2 }}>
+              <CardLineGraph
+                icon={<BiCar size={24} />}
+                title="Traffic"
+                description="Total site traffic for trailing twelve months."
+                data={new Array(12).fill(0)} // Plausible API
               />
             </GridItem>
           </Grid>

@@ -7,7 +7,6 @@ interface Props {
   icon: ReactNode;
   title: string;
   description: string;
-  label: string;
   data: number[];
   isCurrency?: boolean;
 }
@@ -17,6 +16,7 @@ export default function CardFinancialTotal({
   title,
   description,
   data,
+  isCurrency,
 }: Props) {
   return (
     <Card>
@@ -30,7 +30,7 @@ export default function CardFinancialTotal({
           <TooltipQuestionMark label={description} />
         </Stack>
         <Box h={55}>
-          <DataVizLineGraph data={data} isCurrency />
+          <DataVizLineGraph data={data} isCurrency={isCurrency} />
         </Box>
       </Stack>
     </Card>
