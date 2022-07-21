@@ -20,6 +20,7 @@ specifiers:
   next: ^12.1.6
   next-plausible: ^3.2.0
   react: ^18.2.0
+  react-chartjs-2: ^4.3.1
   react-dom: ^18.2.0
   react-icons: ^4.4.0
   react-syntax-highlighter: ^15.5.0
@@ -41,6 +42,7 @@ dependencies:
   next: 12.2.0_biqbaboplfbrettd7655fr4n2y
   next-plausible: 3.2.0_24lkarzjpo3wcmj2o6qyrkug4y
   react: 18.2.0
+  react-chartjs-2: 4.3.1_react@18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.4.0_react@18.2.0
   react-syntax-highlighter: 15.5.0_react@18.2.0
@@ -3636,6 +3638,15 @@ packages:
     resolution: {integrity: sha512-Sq4CW4QhwOHE8ucn6J34MqtZCeWFP2aQSmrlroYgqAV1PjStIhJXxYuTgUIfkEk7zTLjmIjLmU5q+fbD1NnOJA==}
     dependencies:
       performance-now: 2.1.0
+    dev: false
+
+  /react-chartjs-2/4.3.1_react@18.2.0:
+    resolution: {integrity: sha512-5i3mjP6tU7QSn0jvb8I4hudTzHJqS8l00ORJnVwI2sYu0ihpj83Lv2YzfxunfxTZkscKvZu2F2w9LkwNBhj6xA==}
+    peerDependencies:
+      chart.js: ^3.5.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react-clientside-effect/1.2.6_react@18.2.0:

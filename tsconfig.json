@@ -21,7 +21,8 @@
       "lib/*": ["./lib/*"],
       "types/*": ["./types/*"],
       "utils/*": ["./utils/*"],
-      "data/*": ["./data/*"]
+      "data/*": ["./data/*"],
+      "constants/*": ["./constants/*"]
     }
   },
   "include": ["next-env.d.ts", "types", "**/*.ts", "**/*.tsx"],

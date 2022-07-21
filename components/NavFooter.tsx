@@ -9,7 +9,7 @@ import {
 import { FaGithub, FaTwitter } from "react-icons/fa";
 import { LinkIcon } from "components";
 
-export default function Footer() {
+export default function NavFooter() {
   return (
     <Box
       bg={useColorModeValue("gray.50", "gray.900")}
