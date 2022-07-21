@@ -84,6 +84,7 @@ const Projects: NextPage = () => {
                 description="Total presales for this project."
                 label="Presales"
                 data={[0, 1, 2, 3, 2, 0, 1, 3, 8, 7, 6, 2]} // Stripe API
+                isCurrency
               />
             </GridItem>{" "}
             <GridItem colSpan={{ base: 6, md: 3, lg: 2 }}>

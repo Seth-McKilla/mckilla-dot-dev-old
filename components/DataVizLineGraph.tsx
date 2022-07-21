@@ -14,63 +14,59 @@ Chart.register(CategoryScale, LinearScale, LineElement, PointElement, Tooltip);
 
 interface Props {
   data: number[];
-  lineColor?: `${string}.${number}`;
+  isCurrency?: boolean;
 }
 
-export default function DataVizLineGraph({
-  data,
-  lineColor = "gray.800",
-}: Props) {
-  const [color, weight] = lineColor.split(".");
+export default function DataVizLineGraph({ data, isCurrency }: Props) {
   const { colors } = useTheme();
+  const color = colors[isCurrency ? "green" : "blue"][400];
 
   return (
-    <Box h={70}>
-      <Line
-        data={{
-          labels: trailingTwelveMonths,
-          datasets: [
-            {
-              fill: false,
-              borderColor: colors[color][weight],
-              borderWidth: 2,
-              data,
-              pointRadius: 0,
-              // @ts-ignore:next-line (bug in chart.js types)
-              lineTension: 0.5,
-            },
-          ],
-        }}
-        options={{
-          responsive: true,
-          plugins: {
-            tooltip: {
-              displayColors: false,
-              callbacks: {
-                label: (tooltipItem) => {
-                  return toCurrency(tooltipItem.raw as number);
-                },
+    <Line
+      data={{
+        labels: trailingTwelveMonths,
+        datasets: [
+          {
+            fill: false,
+            borderColor: color,
+            borderWidth: 2,
+            data,
+            pointRadius: 0,
+            // @ts-ignore:next-line (bug in chart.js types)
+            lineTension: 0.5,
+          },
+        ],
+      }}
+      options={{
+        responsive: true,
+        plugins: {
+          tooltip: {
+            displayColors: false,
+            callbacks: {
+              label: (tooltipItem) => {
+                const value = tooltipItem.raw as number;
+                return isCurrency ? toCurrency(value) : value.toString();
               },
-              bodyColor: colors[color][weight],
             },
+            bodyColor: color,
           },
-          scales: {
-            x: {
-              display: false,
-            },
-            y: {
-              display: false,
-              grace: "3%",
-            },
+        },
+        scales: {
+          x: {
+            display: false,
           },
-          interaction: {
-            mode: "nearest",
-            axis: "x",
-            intersect: false,
+          y: {
+            display: false,
+            grace: "3%",
           },
-          maintainAspectRatio: false,
-        }}
-      />
-    </Box>
+        },
+        interaction: {
+          mode: "nearest",
+          axis: "x",
+          intersect: false,
+        },
+        maintainAspectRatio: false,
+      }}
+    />
   );
 }

@@ -9,6 +9,7 @@ interface Props {
   description: string;
   label: string;
   data: number[];
+  isCurrency?: boolean;
 }
 
 export default function CardFinancialTotal({
@@ -28,7 +29,9 @@ export default function CardFinancialTotal({
           <Spacer />
           <TooltipQuestionMark label={description} />
         </Stack>
-        <DataVizLineGraph data={data} lineColor="green.400" />
+        <Box h={55}>
+          <DataVizLineGraph data={data} isCurrency />
+        </Box>
       </Stack>
     </Card>
   );

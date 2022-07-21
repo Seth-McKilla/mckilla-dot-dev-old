@@ -29,8 +29,8 @@ export default function CardFinancialTotal({
           <TooltipQuestionMark label={description} />
         </Stack>
         <Text
-          fontSize="3xl"
-          color={amount < 0 ? "red.500" : "green.400"}
+          fontSize="4xl"
+          color={amount < 0 ? "red.400" : "green.400"}
           fontWeight={600}
         >
           {toCurrency(amount)}
