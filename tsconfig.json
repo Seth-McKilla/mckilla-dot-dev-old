@@ -22,7 +22,7 @@
       "types/*": ["./types/*"],
       "utils/*": ["./utils/*"],
       "data/*": ["./data/*"],
-      "constants/*": ["./constants/*"]
+      "constant/*": ["./constant/*"]
     }
   },
   "include": ["next-env.d.ts", "types", "**/*.ts", "**/*.tsx"],

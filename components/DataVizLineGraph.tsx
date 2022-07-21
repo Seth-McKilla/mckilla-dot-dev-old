@@ -1,5 +1,5 @@
 import { Line } from "react-chartjs-2";
-import { trailingTwelveMonths } from "constants";
+import { trailingTwelveMonths } from "constant";
 
 interface Props {
   title: string;
@@ -16,20 +16,12 @@ export default function DataVizLineGraph({ title, label, data }: Props) {
           {
             label,
             fill: false,
-            lineTension: 0.5,
             backgroundColor: "rgba(75,192,192,1)",
             borderColor: "rgba(0,0,0,1)",
             borderWidth: 2,
             data,
           },
         ],
-      }}
-      options={{
-        title: {
-          display: true,
-          text: title,
-          fontSize: 20,
-        },
       }}
     />
   );
