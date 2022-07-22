@@ -31,6 +31,10 @@ export default async function handler(
             },
           ],
           templateId: "d-41c37108565849b897aea32681fca7d2",
+          asm: {
+            groupId: +process.env.SENDGRID_WEEKLY_EMAIL_GROUP_ID!,
+            groupsToDisplay: [+process.env.SENDGRID_WEEKLY_EMAIL_GROUP_ID!],
+          },
         });
 
         return res.status(201).json({ message: "Success" });
