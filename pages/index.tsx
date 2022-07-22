@@ -45,7 +45,7 @@ const Home: NextPage = () => {
               src={`/images/logo/full-${colorMode}.png`}
               alt="endevrs-logo"
               placeholder="blur"
-              blurDataURL={`/images/logo/blur-${colorMode}.png`}
+              blurDataURL={`/images/logo/full-${colorMode}.png`}
               width={602}
               height={108}
             />
