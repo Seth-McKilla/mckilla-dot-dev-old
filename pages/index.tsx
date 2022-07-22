@@ -1,10 +1,9 @@
-import NextImage from "next/image";
+import Image from "next/image";
 import {
   Container,
   Flex,
   Heading,
   Text,
-  Image,
   Stack,
   useColorMode,
 } from "@chakra-ui/react";
@@ -42,7 +41,7 @@ const Home: NextPage = () => {
             >
               {"Welcome to"}
             </Heading>
-            <NextImage
+            <Image
               src={`/images/logo/full-${colorMode}.png`}
               alt="endevrs-logo"
               placeholder="blur"
@@ -78,11 +77,15 @@ const Home: NextPage = () => {
       </Flex>
       <Flex flex={1} overflow="hidden" minH="100vh">
         <Image
-          alt="Login Image"
+          src="https://images.unsplash.com/photo-1569748130764-3fed0c102c59?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2400&q=80"
+          width={2400}
+          height={1600}
+          alt="Coding IDE"
+          placeholder="blur"
+          blurDataURL="https://images.unsplash.com/photo-1569748130764-3fed0c102c59?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2400&q=80"
           objectFit="cover"
-          src="https://images.unsplash.com/photo-1569748130764-3fed0c102c59?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80"
-          sx={{
-            filter: "blur(2px) brightness(40%)",
+          style={{
+            filter: "blur(2px) brightness(0.5)",
           }}
         />
       </Flex>
