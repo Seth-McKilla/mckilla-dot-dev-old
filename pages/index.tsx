@@ -48,7 +48,7 @@ const passions = [
 const AboutMe: NextPage = () => (
   <BasicLayout
     meta={{
-      title: "About me",
+      title: "Welcome",
       description: "Get to know more about Seth.",
       cardImage: "/images/seth-headshot.png",
     }}
