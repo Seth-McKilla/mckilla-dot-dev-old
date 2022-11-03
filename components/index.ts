@@ -17,7 +17,7 @@ export { default as LinkText } from "./LinkText";
 
 export { default as MDXComponents } from "./MDXComponents";
 
-export { default as NavBar } from "./NavBar";
+export { default as NavMenu } from "./NavMenu";
 export { default as NavFooter } from "./NavFooter";
 
 export { default as TooltipQuestionMark } from "./TooltipQuestionMark";

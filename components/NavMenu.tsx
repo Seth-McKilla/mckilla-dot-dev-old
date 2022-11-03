@@ -36,7 +36,7 @@ const menuItems = [
   },
 ];
 
-export default function NavBar() {
+export default function NavMenu() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (

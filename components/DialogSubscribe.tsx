@@ -26,7 +26,7 @@ export default function DialogSubscribe({ showCloseButton = true }: Props) {
   const [subscribeState, setSubscribeState] = useState<SubscribeState>("init");
 
   const subscribeMessage: { [key: string]: string } = {
-    init: "One email per week, never any spam 🙅‍♂️",
+    init: "New post alerts, never any spam 🙅‍♂️",
     success: "Thanks for signing up! A welcome email has been sent your way 🚀",
     fail: "Oh no an error! 😭 Please try again later.",
   };

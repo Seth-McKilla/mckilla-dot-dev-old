@@ -17,7 +17,6 @@ import { BasicLayout } from "layouts";
 import {
   CardFinancialTotal,
   CardLineGraph,
-  DialogSubscribe,
   LinkButton,
   LinkGitHubSource,
 } from "components";
@@ -41,7 +40,6 @@ const Projects: NextPage = () => {
       }}
     >
       <Flex mt={16} p={{ base: 0, sm: 8 }} flex={1} direction="column">
-        <DialogSubscribe />
         <Container maxW="container.lg">
           <Heading
             mt={{ base: 3, sm: 0 }}
