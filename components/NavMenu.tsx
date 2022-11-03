@@ -10,10 +10,11 @@ import {
   DrawerBody,
   DrawerFooter,
   Button,
-  useDisclosure,
   IconButton,
   HStack,
   VStack,
+  useColorModeValue,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { FaHeart } from "react-icons/fa";
 import { MdMenu } from "react-icons/md";
@@ -44,9 +45,9 @@ export default function NavMenu() {
           <IconButton
             icon={<MdMenu />}
             aria-label="menu icon"
-            variant="link"
+            variant="outline"
             fontSize="40px"
-            color="white"
+            colorScheme="blue"
             onClick={onOpen}
           />
           <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
