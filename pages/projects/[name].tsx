@@ -20,6 +20,7 @@ import {
   LinkButton,
   LinkGitHubSource,
 } from "components";
+import { toTitleCase } from "utils";
 
 import type { NextPage, GetStaticPropsContext } from "next";
 import type { Project } from "types";
@@ -34,7 +35,7 @@ const Projects: NextPage = () => {
   return (
     <BasicLayout
       meta={{
-        title: `${projectName ? "| " + projectName : ""}`,
+        title: toTitleCase(name!),
         description: "My current endeavor.",
         cardImage: "/images/seth-headshot.png",
       }}

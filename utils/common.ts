@@ -22,3 +22,12 @@ export const toCurrency = (amount: number) => {
     minimumFractionDigits: 2,
   }).format(Math.abs(amount));
 };
+
+export const toTitleCase = (str: string | string[]) => {
+  return str
+    .toString()
+    .toLowerCase()
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+};
