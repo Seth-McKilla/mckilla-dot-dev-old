@@ -19,16 +19,12 @@ import {
 } from "@chakra-ui/react";
 import { FaHeart } from "react-icons/fa";
 import { MdMenu } from "react-icons/md";
-import { LinkText } from "components";
+import { ButtonThemeToggle, LinkText } from "components";
 
 const menuItems = [
   {
     label: "Home",
     href: "/",
-  },
-  {
-    label: "About me",
-    href: "/about-me",
   },
   {
     label: "Projects",
@@ -103,6 +99,8 @@ export default function NavBar() {
                       </Button>
                     </a>
                   </Link>
+
+                  <ButtonThemeToggle />
                 </HStack>
               </DrawerFooter>
             </DrawerContent>

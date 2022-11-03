@@ -1,3 +1,5 @@
+export { default as ButtonThemeToggle } from "./ButtonThemeToggle";
+
 export { default as Card } from "./Card";
 export { default as CardFinancialTotal } from "./CardFinancialTotal";
 export { default as CardLineGraph } from "./CardLineGraph";
