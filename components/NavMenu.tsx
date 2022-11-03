@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import {
   Box,
   Flex,
@@ -12,7 +11,6 @@ import {
   DrawerFooter,
   Button,
   useDisclosure,
-  useColorModeValue,
   IconButton,
   HStack,
   VStack,
@@ -40,31 +38,9 @@ export default function NavMenu() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box
-      as="header"
-      position="fixed"
-      w="100%"
-      bg={useColorModeValue("blue.700", "gray.900")}
-      px={4}
-      zIndex={10}
-    >
-      <Flex h={16} alignItems="center" justifyContent="space-between">
-        <Box>
-          <Link href="/" passHref>
-            <a>
-              <Image
-                src="/images/logo/abbr.png"
-                placeholder="blur"
-                blurDataURL="/images/logo/abbr.png"
-                alt="endevrs-logo"
-                height={40}
-                width={40}
-              />
-            </a>
-          </Link>
-        </Box>
-
-        <Flex alignItems="center">
+    <Box as="header" position="fixed" w="100%" px={4} zIndex={10}>
+      <Flex h={16} justifyContent="right">
+        <Flex alignItems="center" borderRadius="full">
           <IconButton
             icon={<MdMenu />}
             aria-label="menu icon"
