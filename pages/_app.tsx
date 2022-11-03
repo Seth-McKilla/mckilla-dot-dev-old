@@ -8,7 +8,7 @@ import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <PlausibleProvider domain="endevrs.dev">
+    <PlausibleProvider domain="mckilla.dev">
       <ChakraProvider resetCSS theme={theme}>
         <DialogSubscribe />
         <NavMenu />

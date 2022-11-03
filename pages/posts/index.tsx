@@ -15,7 +15,7 @@ interface Props {
 const Posts: NextPage<Props> = ({ posts }) => (
   <BasicLayout
     meta={{
-      title: "ENDEVRS | Posts",
+      title: "Posts",
       description:
         "A list of articles on various web development topics including SaaS, NextJS, and Typescript.",
       cardImage: "/images/logo-black.png",

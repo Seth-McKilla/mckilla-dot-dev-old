@@ -20,7 +20,7 @@ export default function LinkGitHubSource({ path }: Props) {
       <Box position="fixed" bottom={1} left={1} zIndex={10}>
         <LinkIcon
           label="GitHub source code"
-          href={`https://github.com/Seth-McKilla/endevrs/blob/main/pages/${path}`}
+          href={`https://github.com/Seth-McKilla/mckilla-dot-dev/blob/main/pages/${path}`}
           size={size}
           color="blue.700"
           hoverColor={hoverColor}

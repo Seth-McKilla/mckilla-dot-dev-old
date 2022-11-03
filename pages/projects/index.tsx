@@ -17,7 +17,7 @@ const Projects: NextPage<Props> = ({ projects }) => {
   return (
     <BasicLayout
       meta={{
-        title: "ENDEVRS | Projects",
+        title: "Projects",
         description: "A collection of my current and past projects.",
         cardImage: "/images/seth-headshot.png",
       }}

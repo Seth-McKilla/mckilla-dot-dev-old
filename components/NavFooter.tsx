@@ -51,7 +51,7 @@ export default function NavFooter() {
         >
           <Text fontSize="small">
             {"©"} {new Date().getFullYear()}{" "}
-            {"ENDEVRS, LLC. All rights reserved."}
+            {"mckilla.dev. All rights reserved."}
           </Text>
           <Stack direction="row" spacing={6}>
             <LinkIcon label="Twitter" href="https://twitter.com/sethmckilla">

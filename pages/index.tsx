@@ -30,24 +30,25 @@ import { shuffle } from "utils";
 import type { NextPage } from "next";
 
 const passions = [
-  "all things javascript.",
+  "all things Typescript.",
   "React and the NextJS framework in particular.",
   "the Legend of Zelda series.",
   "Software as a Service.",
   "the occasional hackathon.",
   "solving interesting problems with software.",
-  "talking with / teaching others about software.",
-  "collaborating with people who also have a passion for software.",
+  "collaborating with people who share my passion for software.",
   "entrepreneurial ventures within the tech space.",
   "consistently learning new things.",
   "getting my hands dirty by exploring new technology.",
   "meditation and self-betterment.",
+  "jogging whilst being in a state of deep contemplation.",
+  "reading non-fiction and science-fiction books.",
 ];
 
 const AboutMe: NextPage = () => (
   <BasicLayout
     meta={{
-      title: "ENDEVRS | About me",
+      title: "About me",
       description: "Get to know more about Seth.",
       cardImage: "/images/seth-headshot.png",
     }}
@@ -100,7 +101,7 @@ const AboutMe: NextPage = () => (
             {"Hey, I'm Seth!"}
           </Heading>
           <Text>
-            {"A self-taught full stack JS dev from the East Coast US."}
+            {"A full stack Typescript developer from the East Coast US."}
           </Text>
           <Text>{"Some things I'm passionate about..."}</Text>
           <Typewriter

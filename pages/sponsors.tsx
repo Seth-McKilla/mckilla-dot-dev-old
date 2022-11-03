@@ -8,7 +8,7 @@ import type { NextPage } from "next";
 const Sponsors: NextPage = () => (
   <BasicLayout
     meta={{
-      title: "ENDEVRS | Sponsors",
+      title: "Sponsors",
       description: "A thank you to my Diamond Sponsors.",
       cardImage: "/images/seth-headshot.png",
     }}
