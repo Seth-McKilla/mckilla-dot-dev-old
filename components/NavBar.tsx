@@ -13,12 +13,11 @@ import {
   Button,
   useDisclosure,
   useColorModeValue,
-  useColorMode,
   IconButton,
   HStack,
   VStack,
 } from "@chakra-ui/react";
-import { FaSun, FaMoon, FaHeart } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
 import { MdMenu } from "react-icons/md";
 import { LinkText } from "components";
 
@@ -42,7 +41,6 @@ const menuItems = [
 ];
 
 export default function NavBar() {
-  const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -105,10 +103,6 @@ export default function NavBar() {
                       </Button>
                     </a>
                   </Link>
-
-                  <Button onClick={toggleColorMode}>
-                    {colorMode === "light" ? <FaMoon /> : <FaSun />}
-                  </Button>
                 </HStack>
               </DrawerFooter>
             </DrawerContent>

@@ -1,15 +1,19 @@
 import Link from "next/link";
 import {
   Box,
+  Button,
   Container,
   Stack,
   Text,
+  useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { FaGithub, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaMoon, FaSun, FaTwitter } from "react-icons/fa";
 import { LinkIcon } from "components";
 
 export default function NavFooter() {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
     <Box
       bg={useColorModeValue("gray.50", "gray.900")}
@@ -23,7 +27,7 @@ export default function NavFooter() {
         justify="center"
         align="center"
       >
-        <Stack direction="row" spacing={6} p={2}>
+        <Stack direction="row" align="center" spacing={6} p={2}>
           <Link href="/">{"Home"}</Link>
           <Link href="mailto:seth@endevrs.dev">{"Contact"}</Link>
           <Link href="https://github.com/sponsors/Seth-McKilla" passHref>
@@ -31,6 +35,9 @@ export default function NavFooter() {
               {"Sponsor"}
             </a>
           </Link>
+          <Button onClick={toggleColorMode}>
+            {colorMode === "light" ? <FaMoon /> : <FaSun />}
+          </Button>
         </Stack>
       </Container>
 
