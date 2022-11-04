@@ -61,7 +61,7 @@ const AboutMe: NextPage = () => (
       justify="center"
       direction="column"
     >
-      <LinkGitHubSource path="about-me.tsx" />
+      <LinkGitHubSource path="index.tsx" />
       <Container maxW="container.lg">
         <VStack>
           <Box
