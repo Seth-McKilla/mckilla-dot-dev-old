@@ -25,7 +25,7 @@ specifiers:
   react-dom: ^18.2.0
   react-icons: ^4.4.0
   react-syntax-highlighter: ^15.5.0
-  stripe: ^9.12.0
+  stripe: ^11.0.0
   typescript: ^4.7.3
   typewriter-effect: ^2.18.2
 
@@ -48,7 +48,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.4.0_react@18.2.0
   react-syntax-highlighter: 15.5.0_react@18.2.0
-  stripe: 9.12.0
+  stripe: 11.3.0
   typewriter-effect: 2.18.2_biqbaboplfbrettd7655fr4n2y
 
 devDependencies:
@@ -4068,9 +4068,9 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /stripe/9.12.0:
-    resolution: {integrity: sha512-dl87y8d137fw2VnfId/HngZ8/J1QLXf3MhoPEeg4MY5VNeryOBnUfew3jXG6sHW/ojRZ1vrKJEZjv3SJSbgUAw==}
-    engines: {node: ^8.1 || >=10.*}
+  /stripe/11.3.0:
+    resolution: {integrity: sha512-/ZVM1dmwrSZzNvN0vIixqhN79fgW2l3qBjw57bnFr5EQcRJTQkuJw6iEgb/EKg/40i2K/lWoa4gwnQkekC326Q==}
+    engines: {node: '>=12.*'}
     dependencies:
       '@types/node': 18.0.0
       qs: 6.11.0
@@ -4254,6 +4254,7 @@ packages:
   /unified/9.2.2:
     resolution: {integrity: sha512-Sg7j110mtefBD+qunSLO1lqOEKdrwBFBrR6Qd8f4uwkhWNlbkaqwHse6e7QvD3AP/MNoJdEDLaf8OxYyoWgorQ==}
     dependencies:
+      '@types/unist': 2.0.6
       bail: 1.0.5
       extend: 3.0.2
       is-buffer: 2.0.5
