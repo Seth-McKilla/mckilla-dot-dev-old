@@ -21,7 +21,7 @@ specifiers:
   next: ^13.0.0
   next-plausible: ^3.2.0
   react: ^18.2.0
-  react-chartjs-2: ^4.3.1
+  react-chartjs-2: ^5.0.0
   react-dom: ^18.2.0
   react-icons: ^4.4.0
   react-syntax-highlighter: ^15.5.0
@@ -44,7 +44,7 @@ dependencies:
   next: 13.0.6_biqbaboplfbrettd7655fr4n2y
   next-plausible: 3.2.0_6jx7hpii6hgsrmhxgqrmo3277u
   react: 18.2.0
-  react-chartjs-2: 4.3.1_mdhqntb7qznawtkbfweh7f2mzm
+  react-chartjs-2: 5.0.1_mdhqntb7qznawtkbfweh7f2mzm
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.4.0_react@18.2.0
   react-syntax-highlighter: 15.5.0_react@18.2.0
@@ -3855,10 +3855,10 @@ packages:
       performance-now: 2.1.0
     dev: false
 
-  /react-chartjs-2/4.3.1_mdhqntb7qznawtkbfweh7f2mzm:
-    resolution: {integrity: sha512-5i3mjP6tU7QSn0jvb8I4hudTzHJqS8l00ORJnVwI2sYu0ihpj83Lv2YzfxunfxTZkscKvZu2F2w9LkwNBhj6xA==}
+  /react-chartjs-2/5.0.1_mdhqntb7qznawtkbfweh7f2mzm:
+    resolution: {integrity: sha512-u38C9OxynlNCBp+79grgXRs7DSJ9w8FuQ5/HO5FbYBbri8HSZW+9SWgjVshLkbXBfXnMGWakbHEtvN0nL2UG7Q==}
     peerDependencies:
-      chart.js: ^3.5.0
+      chart.js: ^4.0.0
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
       chart.js: 4.0.1
