@@ -27,7 +27,7 @@ specifiers:
   react-syntax-highlighter: 15.5.0
   stripe: 11.4.0
   typescript: 4.9.4
-  typewriter-effect: 2.18.2
+  typewriter-effect: 2.19.0
 
 dependencies:
   '@chakra-ui/react': 2.4.4_trzwvufkkp7kwubhpp4parwicy
@@ -49,7 +49,7 @@ dependencies:
   react-icons: 4.7.1_react@18.2.0
   react-syntax-highlighter: 15.5.0_react@18.2.0
   stripe: 11.4.0
-  typewriter-effect: 2.18.2_biqbaboplfbrettd7655fr4n2y
+  typewriter-effect: 2.19.0_biqbaboplfbrettd7655fr4n2y
 
 devDependencies:
   '@types/node': 18.11.17
@@ -4514,11 +4514,11 @@ packages:
     hasBin: true
     dev: true
 
-  /typewriter-effect/2.18.2_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-I6VLfaICftFgZ3sauoVrvHmqzD2r1t+roopD6pyQ1EV4fmq3kZ4ssfLJk9mPd1VHdnwb9XxSnDH09QHNJ/HrXw==}
+  /typewriter-effect/2.19.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-rhUX1ukmAXNFWUnMFx8CDU1uLWJQ7pRYzDU7WfHJRq43i6SmWSP9vFiUsOGfXINodUAgZiJ5xnzwLciHxZDGDg==}
     peerDependencies:
-      react: 17.x
-      react-dom: 17.x
+      react: ^17.x || ^18.x
+      react-dom: ^17.x || ^18.x
     dependencies:
       prop-types: 15.8.1
       raf: 3.4.1
