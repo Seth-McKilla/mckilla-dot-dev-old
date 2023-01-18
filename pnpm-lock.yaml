@@ -4,7 +4,7 @@ specifiers:
   '@chakra-ui/react': 2.4.7
   '@emotion/react': '11'
   '@emotion/styled': '11'
-  '@fontsource/inter': 4.5.14
+  '@fontsource/inter': 4.5.15
   '@mdx-js/loader': 2.2.1
   '@mdx-js/react': 2.2.1
   '@next/mdx': 13.1.1
@@ -33,7 +33,7 @@ dependencies:
   '@chakra-ui/react': 2.4.7_gghrx3fvoawpdx5scn6ldnemqm
   '@emotion/react': 11.9.3_kzbn2opkn2327fwg5yzwzya5o4
   '@emotion/styled': 11.9.3_sl25e3xzyt4iv7gyy6sirxwyr4
-  '@fontsource/inter': 4.5.14
+  '@fontsource/inter': 4.5.15
   '@mdx-js/loader': 2.2.1
   '@mdx-js/react': 2.2.1_react@18.2.0
   '@next/mdx': 13.1.1_vvg67iglxhejglpl7nsv3pjzui
@@ -1329,8 +1329,8 @@ packages:
       - supports-color
     dev: true
 
-  /@fontsource/inter/4.5.14:
-    resolution: {integrity: sha512-JDC9AocdPLuGsASkvWw9hS5gtHE7K9dOwL98XLrk5yjYqxy4uVnScG58NUvFMJDVJRl/7c8Wnap6PEs+7Zvj1Q==}
+  /@fontsource/inter/4.5.15:
+    resolution: {integrity: sha512-FzleM9AxZQK2nqsTDtBiY0PMEVWvnKnuu2i09+p6DHvrHsuucoV2j0tmw+kAT3L4hvsLdAIDv6MdGehsPIdT+Q==}
     dev: false
 
   /@humanwhocodes/config-array/0.11.8:
